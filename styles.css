@@ -1,0 +1,21 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    background-color: #007bff;
+  }
+  
+  section {
+    padding: 60px 0;
+  }
+  
+  #mapa {
+    width: 100%;
+    background-color: #e9ecef;
+    border-radius: 8px;
+  }
+  
+  footer {
+    background-color: #343a40;
+  }

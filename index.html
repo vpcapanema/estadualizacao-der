@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estadualização de Vicinais - DER/SP</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header class="bg-primary text-white text-center py-4">
+    <div class="container">
+      <h1>Estadualização de Vicinais</h1>
+      <p>Programa de apoio à tomada de decisão - DER/SP</p>
+    </div>
+  </header>
+
+  <!-- Menu de Navegação -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">DER/SP</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#introducao">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="#metodologia">Metodologia</a></li>
+          <li class="nav-item"><a class="nav-link" href="#indicadores">Indicadores</a></li>
+          <li class="nav-item"><a class="nav-link" href="#resultados">Resultados</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Seção: Introdução -->
+  <section id="introducao" class="py-5">
+    <div class="container">
+      <h2>O que é a Estadualização de Vicinais?</h2>
+      <p>
+        A estadualização de vicinais é o processo de transferência de trechos rodoviários municipais para o estado,
+        visando melhorar a infraestrutura e promover o desenvolvimento regional.
+      </p>
+      <a href="#metodologia" class="btn btn-primary">Saiba Mais</a>
+    </div>
+  </section>
+
+  <!-- Seção: Metodologia -->
+  <section id="metodologia" class="py-5 bg-light">
+    <div class="container">
+      <h2>Metodologia</h2>
+      <p>
+        Utilizamos o método AHP (Processo Analítico Hierárquico) para avaliar a favorabilidade dos trechos,
+        considerando critérios ambientais, socioeconômicos e técnicos.
+      </p>
+    </div>
+  </section>
+
+  <!-- Seção: Indicadores -->
+  <section id="indicadores" class="py-5">
+    <div class="container">
+      <h2>Indicadores</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Indicador Espacial de Favorabilidade</h3>
+          <p>Critérios ambientais, socioeconômicos e de integração com o SRE.</p>
+        </div>
+        <div class="col-md-6">
+          <h3>Indicador de Qualidade da Infraestrutura</h3>
+          <p>Avaliação de pavimento, acostamento, sinalização, drenagem, pontes e viadutos.</p>
+        </div>
+      </div>
+      <canvas id="graficoIndicadores"></canvas>
+    </div>
+  </section>
+
+  <!-- Seção: Resultados -->
+  <section id="resultados" class="py-5 bg-light">
+    <div class="container">
+      <h2>Resultados</h2>
+      <div id="mapa" style="height: 400px;"></div>
+    </div>
+  </section>
+
+  <!-- Seção: Considerações Finais -->
+  <section id="consideracoes" class="py-5">
+    <div class="container">
+      <h2>Considerações Finais</h2>
+      <p>
+        A ferramenta desenvolvida traz benefícios significativos para a tomada de decisão, com possibilidades
+        de aprimoramento futuro.
+      </p>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer id="contato" class="bg-dark text-white py-4">
+    <div class="container">
+      <h3>Contato</h3>
+      <p>Coordenadoria de Estudos e Pesquisa - DER/SP</p>
+      <p>Email: contato@dersp.sp.gov.br</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>
