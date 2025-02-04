@@ -1,114 +1,177 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Estadualização de Vicinais - DER/SP</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <!-- Cabeçalho -->
-  <header class="bg-primary text-white text-center py-4">
-    <div class="container">
-      <h1>Estadualização de Vicinais</h1>
-      <p>Programa de apoio à tomada de decisão - DER/SP</p>
-    </div>
-  </header>
-
-  <!-- Menu de Navegação -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="#">DER/SP</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="#introducao">Início</a></li>
-          <li class="nav-item"><a class="nav-link" href="#metodologia">Metodologia</a></li>
-          <li class="nav-item"><a class="nav-link" href="#indicadores">Indicadores</a></li>
-          <li class="nav-item"><a class="nav-link" href="#resultados">Resultados</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
-        </ul>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESTADUALIZAÇÃO DE RODOVIAS MUNICIPAIS DER/SP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Cabeçalho -->
+    <header class="bg-primary text-white text-center py-5">
+      <div class="container">
+        <h1 class="display-4">Estadualização de Rodovias Municipais DER/SP</h1>
+        <!-- Texto em maiúsculas, fonte aumentada e centralizado -->
+        <p class="lead text-center" style="font-size: 1.5rem;">FERRAMENTA METODOLÓGICA DE APOIO À TOMADA DE DECISÃO</p>
+        <!-- Texto centralizado -->
+        <p class="mb-0 text-center">Coordenadoria de Estudos e Pesquisas</p>
       </div>
-    </div>
-  </nav>
+    </header>
 
-  <!-- Seção: Introdução -->
-  <section id="introducao" class="py-5">
-    <div class="container">
-      <h2>O que é a Estadualização de Vicinais?</h2>
-      <p>
-        A estadualização de vicinais é o processo de transferência de trechos rodoviários municipais para o estado,
-        visando melhorar a infraestrutura e promover o desenvolvimento regional.
-      </p>
-      <a href="#metodologia" class="btn btn-primary">Saiba Mais</a>
-    </div>
-  </section>
-
-  <!-- Seção: Metodologia -->
-  <section id="metodologia" class="py-5 bg-light">
-    <div class="container">
-      <h2>Metodologia</h2>
-      <p>
-        Utilizamos o método AHP (Processo Analítico Hierárquico) para avaliar a favorabilidade dos trechos,
-        considerando critérios ambientais, socioeconômicos e técnicos.
-      </p>
-    </div>
-  </section>
-
-  <!-- Seção: Indicadores -->
-  <section id="indicadores" class="py-5">
-    <div class="container">
-      <h2>Indicadores</h2>
-      <div class="row">
-        <div class="col-md-6">
-          <h3>Indicador Espacial de Favorabilidade</h3>
-          <p>Critérios ambientais, socioeconômicos e de integração com o SRE.</p>
-        </div>
-        <div class="col-md-6">
-          <h3>Indicador de Qualidade da Infraestrutura</h3>
-          <p>Avaliação de pavimento, acostamento, sinalização, drenagem, pontes e viadutos.</p>
+    <!-- Menu de Navegação -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="#">DER/SP</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#introducao">Início</a></li>
+            <li class="nav-item"><a class="nav-link" href="#metodologia">Metodologia</a></li>
+            <li class="nav-item"><a class="nav-link" href="#indicadores">Indicadores</a></li>
+            <li class="nav-item"><a class="nav-link" href="#resultados">Resultados</a></li>
+            <!-- Nova seção adicionada no menu -->
+            <li class="nav-item"><a class="nav-link" href="#numeros">Estadualização em números</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+          </ul>
         </div>
       </div>
-      <canvas id="graficoIndicadores"></canvas>
-    </div>
-  </section>
+    </nav>
 
-  <!-- Seção: Resultados -->
-  <section id="resultados" class="py-5 bg-light">
-    <div class="container">
-      <h2>Resultados</h2>
-      <div id="mapa" style="height: 400px;"></div>
-    </div>
-  </section>
+    <!-- Seção: Introdução -->
+    <section id="introducao" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">O que é a Estadualização de Rodovias Municipais?</h2>
+        <p class="text-justify">
+          É o processo administrativo e legal de transferência de dominialidade/propriedade, gestão e administração de trechos rodoviários municipais para o estado, visando melhorar a infraestrutura e promover o desenvolvimento regional.
+        </p>
+        <div class="text-center">
+          <a href="#metodologia" class="btn btn-primary btn-lg">Saiba Mais</a>
+        </div>
+      </div>
+    </section>
 
-  <!-- Seção: Considerações Finais -->
-  <section id="consideracoes" class="py-5">
-    <div class="container">
-      <h2>Considerações Finais</h2>
-      <p>
-        A ferramenta desenvolvida traz benefícios significativos para a tomada de decisão, com possibilidades
-        de aprimoramento futuro.
-      </p>
-    </div>
-  </section>
+    <!-- Seção: Metodologia -->
+    <section id="metodologia" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-4">Metodologia</h2>
+        <p class="text-justify">
+          Construímos indicadores de favorabilidade para classificar e hierarquizar as rodovias municipais candidatas à estadualização. Desenvolvemos três indicadores principais: o <strong>Indicador de Favorabilidade Multicritério (IFM)</strong>, baseado em critérios técnicos, como conectividade com a malha rodoviária estadual; critérios ambientais, como a proximidade de áreas protegidas; e critérios econômicos, como a inserção em municípios com alta produção agrícola.
+        </p>
+        <p class="text-justify">
+          O <strong>Indicador de Qualidade da Infraestrutura (IQI)</strong> determina a favorabilidade a partir da avaliação dos elementos estruturais da via, como pavimento, acostamento, sinalização, drenagem, pontes e viadutos. Já o <strong>Indicador de Favorabilidade Socioeconômica (IFS)</strong> classifica os trechos considerando a condição socioeconômica dos municípios, aplicando a lógica da contraposição: quanto mais desenvolvido o município, menor a necessidade da estadualização.
+        </p>
+      </div>
+    </section>
 
-  <!-- Rodapé -->
-  <footer id="contato" class="bg-dark text-white py-4">
-    <div class="container">
-      <h3>Contato</h3>
-      <p>Coordenadoria de Estudos e Pesquisa - DER/SP</p>
-      <p>Email: contato@dersp.sp.gov.br</p>
-    </div>
-  </footer>
+    <!-- Seção: Indicadores -->
+    <section id="indicadores" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Indicadores</h2>
+        <div class="row">
+          <!-- IFM -->
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow">
+              <div class="card-body">
+                <h3 class="card-title">Indicador de Favorabilidade Multicritério (IFM)</h3>
+                <p class="card-text text-justify">
+                  Baseado em critérios técnicos, como a conectividade com a malha rodoviária estadual; critérios ambientais, como a proximidade de áreas protegidas; e critérios econômicos, como a inserção em municípios com alta produção agrícola, o IFM utiliza o método AHP para determinar o peso de cada critério. Como se trata de um modelo espacialmente explícito, a saída desse indicador é um raster (50x50 m) com valores que indicam a favorabilidade. O cálculo é feito por meio de álgebra de mapas, ponderada pelos pesos da AHP.
+                </p>
+              </div>
+            </div>
+          </div>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="scripts.js"></script>
-</body>
+          <!-- IQI -->
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow">
+              <div class="card-body">
+                <h3 class="card-title">Indicador de Qualidade da Infraestrutura (IQI)</h3>
+                <p class="card-text text-justify">
+                  Esse indicador é calculado a partir da ponderação de notas atribuídas aos elementos estruturais da via ou trecho candidato, previamente estabelecidos pela equipe do DER/SP. As notas variam de 1 a 10, onde 1 indica baixíssima qualidade e 10 representa ótima qualidade do elemento avaliado. O valor 0 é atribuído quando o elemento está ausente.
+                  <br><br>
+                  Os pesos de cada elemento foram determinados por meio da aplicação de questionários às 14 Diretorias Regionais do DER/SP. O questionário estruturou uma comparação pareada do conjunto de elementos preestabelecidos, onde cada regional atribuiu um valor de importância variando de 1 a 5 (sendo 1 de baixa importância e 5 de alta importância).
+                  <br><br>
+                  Para determinar o grau de importância global de cada elemento, adotou-se a moda, quando unimodal. Nos casos de graus de importância bi ou multimodais, utilizou-se a média das modas. Com a definição dos pesos, foi possível formular a equação do Indicador de Qualidade da Infraestrutura (IQI), que recebe como entrada as notas dos elementos estruturais e gera um valor numérico que varia de 0 a 1.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- IFS -->
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow">
+              <div class="card-body">
+                <h3 class="card-title">Indicador de Favorabilidade Socioeconômica (IFS)</h3>
+                <p class="card-text text-justify">
+                  O Indicador de Favorabilidade Socioeconômica (IFS) é obtido por meio da ponderação de variáveis e indicadores de desenvolvimento socioeconômico, tais como PIB municipal, PIB per capita, taxa de analfabetismo, índice de vulnerabilidade social, entre outros.
+                  <br><br>
+                  Esse indicador é baseado na lógica da contraposição, onde municípios com maior grau de desenvolvimento apresentam menor favorabilidade para a estadualização de seus trechos ou rodovias municipais.
+                  <br><br>
+                  O cálculo do IFS é realizado por meio de uma média ponderada das variáveis previamente normalizadas, resultando em um valor que varia de 0 a 1. A determinação dos pesos de cada variável foi baseada em referências da literatura especializada.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção: Resultados -->
+    <section id="resultados" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-4">Resultados</h2>
+        <p class="text-justify">
+          Explore os mapas interativos abaixo para visualizar os trechos avaliados e suas características.
+        </p>
+        <div class="ratio ratio-16x9 shadow">
+          <iframe
+            src="https://sirgeomaps.ad.der.sp.gov.br/portal/apps/webappviewer/index.html?id=1edf820629c64578b94be2132ff742b2"
+            allowfullscreen
+            style="border: none;"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção: Estadualização em Números (Penúltima seção) -->
+    <section id="numeros" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Estadualização em Números</h2>
+        <div class="text-center">
+          <canvas id="graficoProcessos"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção: Considerações Finais -->
+    <section id="consideracoes" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Considerações Finais</h2>
+        <p class="text-justify">
+          A ferramenta desenvolvida traz benefícios significativos para a tomada de decisão, com possibilidades de aprimoramento futuro. A integração de dados geográficos, socioeconômicos e técnicos permite uma análise robusta e embasada, contribuindo para o planejamento estratégico do DER/SP.
+        </p>
+      </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer id="contato" class="bg-dark text-white py-4">
+      <div class="container">
+        <h3 class="text-center mb-3">Contato</h3>
+        <p class="text-center mb-0">Coordenadoria de Estudos e Pesquisa - DER/SP</p>
+        <p class="text-center mb-0">Email: contato@dersp.sp.gov.br</p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Biblioteca SheetJS para leitura de arquivos Excel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="scripts.js"></script>
+  </body>
 </html>
