@@ -25,51 +25,74 @@
         </div>
     </nav>
 
-    <!-- Conteúdo da Calculadora -->
-    <section class="py-5">
+    <!-- Cabeçalho Fixo -->
+    <header class="bg-light py-3">
+        <div class="container text-center">
+            <h1 class="fw-bold">Calculadora do Indicador de Qualidade da Infraestrutura (IQI)</h1>
+        </div>
+    </header>
+
+    <!-- Explicação do IQI -->
+    <section class="py-4">
         <div class="container">
-            <h1 class="text-center mb-4">Calculadora do Indicador de Qualidade da Infraestrutura (IQI)</h1>
-            <p class="text-center">Insira os valores para calcular o IQI:</p>
+            <p class="text-justify">
+                O <strong>Indicador de Qualidade da Infraestrutura (IQI)</strong> avalia a adequação estrutural de trechos candidatos à estadualização. Ele varia de **0 a 1**, considerando oito elementos essenciais da infraestrutura: faixa de domínio, pavimento, acostamento, sinalização vertical e horizontal, sistema de drenagem, pontes e viadutos. Cada um desses elementos recebe um peso diferente no cálculo do indicador.
+            </p>
+            <p class="text-justify">
+                O IQI é calculado com base em uma média ponderada das notas atribuídas a cada elemento, conforme definido pelas **Diretorias Regionais do DER/SP**.
+            </p>
+            <p>
+                <a href="https://vinicapanema.github.io/estadualizacao-der/data/documentacao_iqi.pdf" class="btn btn-outline-primary" target="_blank">
+                    📄 Baixar Documentação do IQI
+                </a>
+            </p>
+        </div>
+    </section>
 
-            <form id="iqi-form" class="row g-3">
-                <div class="col-md-6">
-                    <label for="faixa-dominio" class="form-label">Faixa de Domínio (0-10):</label>
-                    <input type="number" id="faixa-dominio" class="form-control" min="0" max="10" required>
-                </div>
-                <div class="col-md-6">
-                    <label for="pavimento" class="form-label">Pavimento (0-10):</label>
-                    <input type="number" id="pavimento" class="form-control" min="0" max="10" required>
-                </div>
-                <div class="col-md-6">
-                    <label for="acostamento" class="form-label">Acostamento (0-10):</label>
-                    <input type="number" id="acostamento" class="form-control" min="0" max="10" required>
-                </div>
-                <div class="col-md-6">
-                    <label for="sinalizacao-vertical" class="form-label">Sinalização Vertical (0-10):</label>
-                    <input type="number" id="sinalizacao-vertical" class="form-control" min="0" max="10" required>
-                </div>
-                <div class="col-md-6">
-                    <label for="sinalizacao-horizontal" class="form-label">Sinalização Horizontal (0-10):</label>
-                    <input type="number" id="sinalizacao-horizontal" class="form-control" min="0" max="10" required>
-                </div>
-                <div class="col-md-6">
-                    <label for="sistema-drenagem" class="form-label">Sistema de Drenagem (0-10):</label>
-                    <input type="number" id="sistema-drenagem" class="form-control" min="0" max="10" required>
-                </div>
-                <div class="col-md-6">
-                    <label for="ponte" class="form-label">Ponte (0-10):</label>
-                    <input type="number" id="ponte" class="form-control" min="0" max="10" required>
-                </div>
-                <div class="col-md-6">
-                    <label for="viaduto" class="form-label">Viaduto (0-10):</label>
-                    <input type="number" id="viaduto" class="form-control" min="0" max="10" required>
-                </div>
-                <div class="col-12 text-center">
-                    <button type="button" class="btn btn-success" onclick="calcularIQI()">Calcular IQI</button>
-                </div>
-            </form>
-
-            <h2 class="text-center mt-4">Resultado do IQI: <span id="resultado"></span></h2>
+    <!-- Calculadora do IQI -->
+    <section class="py-4">
+        <div class="container">
+            <div class="card shadow p-4">
+                <h2 class="text-center mb-4">Calculadora IQI</h2>
+                <form id="iqi-form" class="row g-3">
+                    <div class="col-md-6">
+                        <label for="faixa-dominio" class="form-label">Faixa de Domínio (0-10)</label>
+                        <input type="number" id="faixa-dominio" class="form-control" min="0" max="10" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="pavimento" class="form-label">Pavimento (0-10)</label>
+                        <input type="number" id="pavimento" class="form-control" min="0" max="10" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="acostamento" class="form-label">Acostamento (0-10)</label>
+                        <input type="number" id="acostamento" class="form-control" min="0" max="10" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="sinalizacao-vertical" class="form-label">Sinalização Vertical (0-10)</label>
+                        <input type="number" id="sinalizacao-vertical" class="form-control" min="0" max="10" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="sinalizacao-horizontal" class="form-label">Sinalização Horizontal (0-10)</label>
+                        <input type="number" id="sinalizacao-horizontal" class="form-control" min="0" max="10" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="sistema-drenagem" class="form-label">Sistema de Drenagem (0-10)</label>
+                        <input type="number" id="sistema-drenagem" class="form-control" min="0" max="10" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="ponte" class="form-label">Ponte (0-10)</label>
+                        <input type="number" id="ponte" class="form-control" min="0" max="10" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="viaduto" class="form-label">Viaduto (0-10)</label>
+                        <input type="number" id="viaduto" class="form-control" min="0" max="10" required>
+                    </div>
+                    <div class="col-12 text-center">
+                        <button type="button" class="btn btn-success" onclick="calcularIQI()">Calcular IQI</button>
+                    </div>
+                </form>
+                <h2 class="text-center mt-4">Resultado do IQI: <span id="resultado"></span></h2>
+            </div>
         </div>
     </section>
 
