@@ -65,60 +65,70 @@
         <p class="text-justify">
           O <strong>Indicador de Qualidade da Infraestrutura (IQI)</strong> determina a favorabilidade a partir da avaliação dos elementos estruturais da via, como pavimento, acostamento, sinalização, drenagem, pontes e viadutos. Já o <strong>Indicador de Favorabilidade Socioeconômica (IFS)</strong> classifica os trechos considerando a condição socioeconômica dos municípios, aplicando a lógica da contraposição: quanto mais desenvolvido o município, menor a necessidade da estadualização.
         </p>
+        <<div class="text-center">
+          <img src="https://vinicapanema.github.io/estadualizacao-der/data/fluxograma_metodologia.jpg" alt="Fluxograma da Metodologia" class="img-fluid shadow-lg">
       </div>
-    </section>
+  </div>
+</section>
 
     <!-- Seção: Indicadores -->
     <section id="indicadores" class="py-5">
       <div class="container">
-        <h2 class="text-center mb-4">Indicadores</h2>
-        <div class="row">
-          <!-- IFM -->
-          <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow">
-              <div class="card-body">
-                <h3 class="card-title">Indicador de Favorabilidade Multicritério (IFM)</h3>
-                <p class="card-text text-justify">
-                  Baseado em critérios técnicos, como a conectividade com a malha rodoviária estadual; critérios ambientais, como a proximidade de áreas protegidas; e critérios econômicos, como a inserção em municípios com alta produção agrícola, o IFM utiliza o método AHP para determinar o peso de cada critério. Como se trata de um modelo espacialmente explícito, a saída desse indicador é um raster (50x50 m) com valores que indicam a favorabilidade. O cálculo é feito por meio de álgebra de mapas, ponderada pelos pesos da AHP.
-                </p>
+          <h2 class="text-center mb-4">Indicadores</h2>
+          <div class="row">
+              <!-- IFM -->
+              <div class="col-md-4 mb-4">
+                  <div class="card h-100 shadow">
+                      <div class="card-body">
+                          <h3 class="card-title">Indicador de Favorabilidade Multicritério (IFM)</h3>
+                          <p class="card-text text-justify">
+                              O IFM avalia a favorabilidade de um trecho ou rodovia à estadualização considerando três conjuntos de critérios: técnicos, ambientais e econômicos. Critérios técnicos incluem a conectividade com a malha rodoviária estadual e a importância estratégica da via. Os ambientais consideram a proximidade com áreas protegidas, enquanto os econômicos analisam a inserção em municípios com alta produção agrícola. Para atribuir pesos a cada critério, utilizou-se a técnica de Análise Hierárquica de Processo (AHP), baseada na comparação pareada de variáveis. O resultado é um raster espacial com resolução de 50x50 metros, onde cada pixel armazena um valor de favorabilidade, calculado por meio de álgebra de mapas ponderada pelos pesos da AHP.
+                          </p>
+                          <ul>
+                              <li><a href="https://vinicapanema.github.io/estadualizacao-der/data/INDICADOR%20ESPACIAL%20MULTICRIT%C3%89RIO.pdf#zoom=page-fit" target="_blank">Mapa do Indicador Multicritério de Favorabilidade</a></li>
+                              <li><a href="https://vinicapanema.github.io/estadualizacao-der/data/SENSIBILIDADE.pdf#zoom=page-fit" target="_blank">Análise de Sensibilidade do IMF</a></li>
+                          </ul>
+                      </div>
+                  </div>
               </div>
-            </div>
-          </div>
-
-          <!-- IQI -->
-          <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow">
-              <div class="card-body">
-                <h3 class="card-title">Indicador de Qualidade da Infraestrutura (IQI)</h3>
-                <p class="card-text text-justify">
-                  Esse indicador é calculado a partir da ponderação de notas atribuídas aos elementos estruturais da via ou trecho candidato, previamente estabelecidos pela equipe do DER/SP. As notas variam de 1 a 10, onde 1 indica baixíssima qualidade e 10 representa ótima qualidade do elemento avaliado. O valor 0 é atribuído quando o elemento está ausente.
-                  <br><br>
-                  Os pesos de cada elemento foram determinados por meio da aplicação de questionários às 14 Diretorias Regionais do DER/SP. O questionário estruturou uma comparação pareada do conjunto de elementos preestabelecidos, onde cada regional atribuiu um valor de importância variando de 1 a 5 (sendo 1 de baixa importância e 5 de alta importância).
-                  <br><br>
-                  Para determinar o grau de importância global de cada elemento, adotou-se a moda, quando unimodal. Nos casos de graus de importância bi ou multimodais, utilizou-se a média das modas. Com a definição dos pesos, foi possível formular a equação do Indicador de Qualidade da Infraestrutura (IQI), que recebe como entrada as notas dos elementos estruturais e gera um valor numérico que varia de 0 a 1.
-                </p>
+  
+              <!-- IQI -->
+              <div class="col-md-4 mb-4">
+                  <div class="card h-100 shadow">
+                      <div class="card-body">
+                          <h3 class="card-title">Indicador de Qualidade da Infraestrutura (IQI)</h3>
+                          <p class="card-text text-justify">
+                              O IQI mede a adequação da infraestrutura viária de trechos candidatos à estadualização, variando de 0 a 1. São avaliados oito elementos essenciais: faixa de domínio, pavimento, acostamento, sinalização vertical e horizontal, sistema de drenagem, pontes e viadutos. Cada elemento recebe uma nota de 0 a 10, conforme sua presença e qualidade. Os pesos foram definidos com base em questionários aplicados às 14 Diretorias Regionais do DER/SP para garantir que a experiência e a expertise técnica múltiplas fossem consideradas na avaliação. O cálculo final do IQI utiliza uma média ponderada das notas e pesos, garantindo que trechos com infraestrutura mais robusta sejam melhor classificados no indicador.
+                          </p>
+                          <div class="text-center">
+                              <a href="https://vinicapanema.github.io/estadualizacao-der/calculadora-iqi.html" class="btn btn-primary">Calculadora do IQI</a>
+                          </div>
+                      </div>
+                  </div>
               </div>
-            </div>
-          </div>
-
-          <!-- IFS -->
-          <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow">
-              <div class="card-body">
-                <h3 class="card-title">Indicador de Favorabilidade Socioeconômica (IFS)</h3>
-                <p class="card-text text-justify">
-                  O Indicador de Favorabilidade Socioeconômica (IFS) é obtido por meio da ponderação de variáveis e indicadores de desenvolvimento socioeconômico, tais como PIB municipal, PIB per capita, taxa de analfabetismo, índice de vulnerabilidade social, entre outros.
-                  <br><br>
-                  Esse indicador é baseado na lógica da contraposição, onde municípios com maior grau de desenvolvimento apresentam menor favorabilidade para a estadualização de seus trechos ou rodovias municipais.
-                  <br><br>
-                  O cálculo do IFS é realizado por meio de uma média ponderada das variáveis previamente normalizadas, resultando em um valor que varia de 0 a 1. A determinação dos pesos de cada variável foi baseada em referências da literatura especializada.
-                </p>
+  
+              <!-- IFS -->
+              <div class="col-md-4 mb-4">
+                  <div class="card h-100 shadow">
+                      <div class="card-body">
+                          <h3 class="card-title">Indicador de Favorabilidade Socioeconômica (IFS)</h3>
+                          <p class="card-text text-justify">
+                              O IFS avalia a favorabilidade dos trechos à estadualização com base no nível de desenvolvimento socioeconômico dos municípios. Esse indicador opera sob a lógica da contraposição: municípios menos desenvolvidos apresentam maior favorabilidade à estadualização de seus trechos. O cálculo é feito a partir da normalização e ponderação de variáveis como PIB municipal, PIB per capita, taxa de analfabetismo e índice de vulnerabilidade social. Os pesos das variáveis foram definidos com base em estudos acadêmicos e indicadores oficiais. O resultado final varia de 0 a 1, sendo que valores mais altos indicam menor favorabilidade para a estadualização.
+                          </p>
+                          <ul>
+                              <li><a href="https://vinicapanema.github.io/estadualizacao-der/data/INDICADOR_SOCIOECONOMICO.pdf#zoom=page-fit" target="_blank">Mapa do Indicador de Favorabilidade Socioeconômica</a></li>
+                          </ul>
+                      </div>
+                  </div>
               </div>
-            </div>
           </div>
-        </div>
       </div>
-    </section>
+  </section>
+  
+  
+  
+  
+  
 
     <!-- Seção: Resultados -->
     <section id="resultados" class="py-5 bg-light">

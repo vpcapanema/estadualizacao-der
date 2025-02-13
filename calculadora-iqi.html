@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora do IQI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Estadualização</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="calculadora-iqi.html">Calculadora IQI</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo da Calculadora -->
+    <section class="py-5">
+        <div class="container">
+            <h1 class="text-center mb-4">Calculadora do Indicador de Qualidade da Infraestrutura (IQI)</h1>
+            <p class="text-center">Insira os valores para calcular o IQI:</p>
+
+            <form id="iqi-form" class="row g-3">
+                <div class="col-md-6">
+                    <label for="faixa-dominio" class="form-label">Faixa de Domínio (0-10):</label>
+                    <input type="number" id="faixa-dominio" class="form-control" min="0" max="10" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="pavimento" class="form-label">Pavimento (0-10):</label>
+                    <input type="number" id="pavimento" class="form-control" min="0" max="10" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="acostamento" class="form-label">Acostamento (0-10):</label>
+                    <input type="number" id="acostamento" class="form-control" min="0" max="10" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="sinalizacao-vertical" class="form-label">Sinalização Vertical (0-10):</label>
+                    <input type="number" id="sinalizacao-vertical" class="form-control" min="0" max="10" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="sinalizacao-horizontal" class="form-label">Sinalização Horizontal (0-10):</label>
+                    <input type="number" id="sinalizacao-horizontal" class="form-control" min="0" max="10" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="sistema-drenagem" class="form-label">Sistema de Drenagem (0-10):</label>
+                    <input type="number" id="sistema-drenagem" class="form-control" min="0" max="10" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="ponte" class="form-label">Ponte (0-10):</label>
+                    <input type="number" id="ponte" class="form-control" min="0" max="10" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="viaduto" class="form-label">Viaduto (0-10):</label>
+                    <input type="number" id="viaduto" class="form-control" min="0" max="10" required>
+                </div>
+                <div class="col-12 text-center">
+                    <button type="button" class="btn btn-success" onclick="calcularIQI()">Calcular IQI</button>
+                </div>
+            </form>
+
+            <h2 class="text-center mt-4">Resultado do IQI: <span id="resultado"></span></h2>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>© 2024 Estadualização DER - Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function calcularIQI() {
+            const pesos = {
+                "faixa-dominio": 2, "pavimento": 2, "acostamento": 1.5,
+                "sinalizacao-vertical": 1.1, "sinalizacao-horizontal": 1.1, "sistema-drenagem": 1.1,
+                "ponte": 5, "viaduto": 5
+            };
+
+            let somaPonderada = 0, somaPesos = 0;
+
+            for (let id in pesos) {
+                const valor = parseFloat(document.getElementById(id).value) || 0;
+                somaPonderada += valor * pesos[id];
+                somaPesos += 10 * pesos[id];
+            }
+
+            const resultadoIQI = (somaPonderada / somaPesos).toFixed(2);
+            document.getElementById("resultado").textContent = resultadoIQI;
+        }
+    </script>
+
+</body>
+</html>
