@@ -6,6 +6,25 @@
     <title>Calculadora do IQI</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilização da tabela de classificação */
+        .quality-scale {
+            width: 100%;
+            text-align: center;
+            font-size: 1rem;
+        }
+        .quality-scale td {
+            padding: 10px;
+            font-weight: bold;
+            color: white;
+        }
+        .q-0 { background-color: #8B0000; } /* Ausente (vermelho escuro) */
+        .q-1-3 { background-color: #FF4500; } /* Baixa qualidade (laranja) */
+        .q-4-5 { background-color: #FFD700; } /* Média qualidade (amarelo) */
+        .q-6-7 { background-color: #32CD32; } /* Boa qualidade (verde claro) */
+        .q-8-9 { background-color: #008000; } /* Muito boa qualidade (verde) */
+        .q-10 { background-color: #004d00; } /* Ótima qualidade (verde escuro) */
+    </style>
 </head>
 <body>
 
@@ -36,10 +55,7 @@
     <section class="py-4">
         <div class="container">
             <p class="text-justify">
-                O <strong>Indicador de Qualidade da Infraestrutura (IQI)</strong> avalia a condição estrutural de trechos rodoviários candidatos à estadualização. O índice varia de **0 a 1**, considerando oito elementos essenciais da infraestrutura: faixa de domínio, pavimento, acostamento, sinalização vertical e horizontal, sistema de drenagem, pontes e viadutos. Cada um desses elementos recebe um peso específico no cálculo.
-            </p>
-            <p class="text-justify">
-                O IQI é obtido a partir de uma **média ponderada das notas** atribuídas a cada um desses elementos, conforme metodologia desenvolvida pelas **Diretorias Regionais do DER/SP**.
+                O <strong>Indicador de Qualidade da Infraestrutura (IQI)</strong> é a etapa final do processo de estadualização, consolidando a **vistoria de campo**, momento em que os elementos de infraestrutura são realmente avaliados. O índice varia de **0 a 1**, considerando oito elementos essenciais da infraestrutura: faixa de domínio, pavimento, acostamento, sinalização vertical e horizontal, sistema de drenagem, pontes e viadutos. Cada um desses elementos recebe um peso específico no cálculo.
             </p>
             <div class="text-center">
                 <a href="https://vinicapanema.github.io/estadualizacao-der/data/documentacao_iqi.pdf" class="btn btn-outline-primary" target="_blank">
@@ -67,46 +83,24 @@
                                 <label for="pavimento" class="form-label">Pavimento (0-10)</label>
                                 <input type="number" id="pavimento" class="form-control" min="0" max="10" required>
                             </div>
-                            <div class="col-12">
-                                <label for="acostamento" class="form-label">Acostamento (0-10)</label>
-                                <input type="number" id="acostamento" class="form-control" min="0" max="10" required>
-                            </div>
-                            <div class="col-12">
-                                <label for="sinalizacao-vertical" class="form-label">Sinalização Vertical (0-10)</label>
-                                <input type="number" id="sinalizacao-vertical" class="form-control" min="0" max="10" required>
-                            </div>
-                            <div class="col-12">
-                                <label for="sinalizacao-horizontal" class="form-label">Sinalização Horizontal (0-10)</label>
-                                <input type="number" id="sinalizacao-horizontal" class="form-control" min="0" max="10" required>
-                            </div>
-                            <div class="col-12">
-                                <label for="sistema-drenagem" class="form-label">Sistema de Drenagem (0-10)</label>
-                                <input type="number" id="sistema-drenagem" class="form-control" min="0" max="10" required>
-                            </div>
-                            <div class="col-12">
-                                <label for="ponte" class="form-label">Ponte (0-10)</label>
-                                <input type="number" id="ponte" class="form-control" min="0" max="10" required>
-                            </div>
-                            <div class="col-12">
-                                <label for="viaduto" class="form-label">Viaduto (0-10)</label>
-                                <input type="number" id="viaduto" class="form-control" min="0" max="10" required>
-                            </div>
                             <div class="col-12 text-center">
-                                <button type="button" class="btn btn-success" onclick="calcularIQI()">Calcular IQI</button>
+                                <button type="button" class="btn btn-success mt-3" onclick="calcularIQI()">Calcular IQI</button>
                             </div>
                         </form>
                         <h2 class="text-center mt-4">Resultado do IQI: <span id="resultado"></span></h2>
                     </div>
 
-                    <!-- Coluna Direita: Instruções -->
+                    <!-- Coluna Direita: Escala de Qualidade -->
                     <div class="col-md-6">
-                        <h3 class="text-center">Instruções</h3>
-                        <p>Preencha os campos com as notas de **0 a 10**:</p>
-                        <ul>
-                            <li><strong>0-3:</strong> Condição ruim ou ausente.</li>
-                            <li><strong>4-6:</strong> Condição intermediária.</li>
-                            <li><strong>7-10:</strong> Infraestrutura em boas condições.</li>
-                        </ul>
+                        <h3 class="text-center">Escala de Qualidade</h3>
+                        <table class="quality-scale table table-bordered">
+                            <tr><td class="q-0">0 - Ausente</td></tr>
+                            <tr><td class="q-1-3">1 – 3 - Baixa qualidade</td></tr>
+                            <tr><td class="q-4-5">4 – 5 - Média qualidade</td></tr>
+                            <tr><td class="q-6-7">6 – 7 - Boa qualidade</td></tr>
+                            <tr><td class="q-8-9">8 – 9 - Muito boa qualidade</td></tr>
+                            <tr><td class="q-10">10 - Ótima qualidade</td></tr>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -121,9 +115,7 @@
     <script>
         function calcularIQI() {
             const pesos = {
-                "faixa-dominio": 2, "pavimento": 2, "acostamento": 1.5,
-                "sinalizacao-vertical": 1.1, "sinalizacao-horizontal": 1.1, "sistema-drenagem": 1.1,
-                "ponte": 5, "viaduto": 5
+                "faixa-dominio": 2, "pavimento": 2
             };
 
             let somaPonderada = 0, somaPesos = 0;
