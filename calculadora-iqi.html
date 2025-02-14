@@ -7,133 +7,287 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
+        /* Reduz um pouco a escala para que o conteúdo caiba melhor */
+        .scale-down {
+          transform: scale(0.95);
+          transform-origin: top center;
+        }
         /* Estilização da tabela de classificação */
         .quality-scale {
-            width: 100%;
-            text-align: center;
-            font-size: 1rem;
+          width: 100%;
+          text-align: center;
+          font-size: 1rem;
         }
         .quality-scale td {
-            padding: 10px;
-            font-weight: bold;
-            color: white;
+          padding: 10px;
+          font-weight: bold;
+          color: white;
         }
-        .q-0 { background-color: #8B0000; } /* Ausente (vermelho escuro) */
-        .q-1-3 { background-color: #FF4500; } /* Baixa qualidade (laranja) */
-        .q-4-5 { background-color: #FFD700; } /* Média qualidade (amarelo) */
-        .q-6-7 { background-color: #32CD32; } /* Boa qualidade (verde claro) */
-        .q-8-9 { background-color: #008000; } /* Muito boa qualidade (verde) */
-        .q-10 { background-color: #004d00; } /* Ótima qualidade (verde escuro) */
-    </style>
-</head>
-<body>
-
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+        .q-0 { background-color: #8B0000; } /* Ausente */
+        .q-1-3 { background-color: #FF4500; } /* Baixa qualidade */
+        .q-4-5 { background-color: #FFD700; } /* Média qualidade */
+        .q-6-7 { background-color: #32CD32; } /* Boa qualidade */
+        .q-8-9 { background-color: #008000; } /* Muito boa qualidade */
+        .q-10 { background-color: #004d00; } /* Ótima qualidade */
+      </style>
+    </head>
+    <body>
+    
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="index.html">DER/SP</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
-                    <li class="nav-item"><a class="nav-link" href="calculadora-iqi.html">Calculadora IQI</a></li>
-                </ul>
-            </div>
+          <a class="navbar-brand" href="index.html">DER/SP</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+              <li class="nav-item"><a class="nav-link" href="calculadora-iqi.html">Calculadora IQI</a></li>
+            </ul>
+          </div>
         </div>
-    </nav>
-
-    <!-- Cabeçalho fixo -->
-    <header class="bg-primary text-white py-4">
+      </nav>
+    
+      <!-- Cabeçalho -->
+      <header class="bg-primary text-white py-4">
         <div class="container text-center">
-            <h1 class="fw-bold">Calculadora do Indicador de Qualidade da Infraestrutura (IQI)</h1>
+          <h1 class="fw-bold">Calculadora do Indicador de Qualidade da Infraestrutura (IQI)</h1>
         </div>
-    </header>
-
-    <!-- Explicação do IQI -->
-    <section class="py-4">
+      </header>
+    
+      <!-- Seção: Explicação do IQI -->
+      <section class="py-4">
         <div class="container">
-            <p class="text-justify">
-                O <strong>Indicador de Qualidade da Infraestrutura (IQI)</strong> é a etapa final do processo de estadualização, consolidando a **vistoria de campo**, momento em que os elementos de infraestrutura são realmente avaliados. O índice varia de **0 a 1**, considerando oito elementos essenciais da infraestrutura: faixa de domínio, pavimento, acostamento, sinalização vertical e horizontal, sistema de drenagem, pontes e viadutos. Cada um desses elementos recebe um peso específico no cálculo.
-            </p>
-            <div class="text-center">
-                <a href="https://vinicapanema.github.io/estadualizacao-der/data/documentacao_iqi.pdf" class="btn btn-outline-primary" target="_blank">
-                    📄 Baixar Documentação do IQI
-                </a>
-            </div>
+          <p class="text-justify">
+            O <strong>Indicador de Qualidade da Infraestrutura (IQI)</strong> é a etapa final do processo de estadualização, consolidando a <strong>vistoria de campo</strong> em que os elementos de infraestrutura são avaliados. O índice varia de <strong>0 a 1</strong>, considerando os seguintes elementos:
+          </p>
+          <ul>
+            <li>Faixa de Domínio (FD)</li>
+            <li>Pavimento (P)</li>
+            <li>Acostamento (A)</li>
+            <li>Sinalização Vertical (SV)</li>
+            <li>Sinalização Horizontal (SH)</li>
+            <li>Sistema de Drenagem (SD)</li>
+            <li>Ponte (Po)</li>
+            <li>Viaduto (V)</li>
+          </ul>
+          <div class="text-center">
+            <a href="https://vinicapanema.github.io/estadualizacao-der/data/documentacao_iqi.pdf" class="btn btn-outline-primary" target="_blank">
+              📄 Baixar Documentação do IQI
+            </a>
+          </div>
         </div>
-    </section>
-
-    <!-- Calculadora do IQI -->
-    <section class="py-4">
+      </section>
+    
+      <!-- Seção: Calculadora (critérios em coluna única) -->
+      <section id="calculadora-section" class="py-4">
         <div class="container">
-            <div class="card shadow p-4">
-                <div class="row">
-                    <!-- Coluna Esquerda: Calculadora -->
-                    <div class="col-md-6">
-                        <h2 class="text-center mb-3">Calculadora IQI</h2>
-                        <p class="text-center">Entre com as notas dos elementos de infraestrutura.</p>
-                        <form id="iqi-form" class="row g-3">
-                            <div class="col-12">
-                                <label for="faixa-dominio" class="form-label">Faixa de Domínio (0-10)</label>
-                                <input type="number" id="faixa-dominio" class="form-control" min="0" max="10" required>
-                            </div>
-                            <div class="col-12">
-                                <label for="pavimento" class="form-label">Pavimento (0-10)</label>
-                                <input type="number" id="pavimento" class="form-control" min="0" max="10" required>
-                            </div>
-                            <div class="col-12 text-center">
-                                <button type="button" class="btn btn-success mt-3" onclick="calcularIQI()">Calcular IQI</button>
-                            </div>
-                        </form>
-                        <h2 class="text-center mt-4">Resultado do IQI: <span id="resultado"></span></h2>
-                    </div>
-
-                    <!-- Coluna Direita: Escala de Qualidade -->
-                    <div class="col-md-6">
-                        <h3 class="text-center">Escala de Qualidade</h3>
-                        <table class="quality-scale table table-bordered">
-                            <tr><td class="q-0">0 - Ausente</td></tr>
-                            <tr><td class="q-1-3">1 – 3 - Baixa qualidade</td></tr>
-                            <tr><td class="q-4-5">4 – 5 - Média qualidade</td></tr>
-                            <tr><td class="q-6-7">6 – 7 - Boa qualidade</td></tr>
-                            <tr><td class="q-8-9">8 – 9 - Muito boa qualidade</td></tr>
-                            <tr><td class="q-10">10 - Ótima qualidade</td></tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
+          <div class="card shadow p-4 scale-down">
+            <h2 class="text-center mb-3">Calculadora IQI</h2>
+            <form id="iqi-form">
+              <div class="mb-3">
+                <label for="faixa-dominio" class="form-label">Faixa de Domínio (FD) (0-10)</label>
+                <input type="number" id="faixa-dominio" class="form-control" min="0" max="10" required>
+              </div>
+              <div class="mb-3">
+                <label for="pavimento" class="form-label">Pavimento (P) (0-10)</label>
+                <input type="number" id="pavimento" class="form-control" min="0" max="10" required>
+              </div>
+              <div class="mb-3">
+                <label for="acostamento" class="form-label">Acostamento (A) (0-10)</label>
+                <input type="number" id="acostamento" class="form-control" min="0" max="10" required>
+              </div>
+              <div class="mb-3">
+                <label for="sinalizacao-vertical" class="form-label">Sinalização Vertical (SV) (0-10)</label>
+                <input type="number" id="sinalizacao-vertical" class="form-control" min="0" max="10" required>
+              </div>
+              <div class="mb-3">
+                <label for="sinalizacao-horizontal" class="form-label">Sinalização Horizontal (SH) (0-10)</label>
+                <input type="number" id="sinalizacao-horizontal" class="form-control" min="0" max="10" required>
+              </div>
+              <div class="mb-3">
+                <label for="sistema-drenagem" class="form-label">Sistema de Drenagem (SD) (0-10)</label>
+                <input type="number" id="sistema-drenagem" class="form-control" min="0" max="10" required>
+              </div>
+              <div class="mb-3">
+                <label for="ponte" class="form-label">Ponte (Po) (0-10)</label>
+                <input type="number" id="ponte" class="form-control" min="0" max="10" required>
+              </div>
+              <div class="mb-3">
+                <label for="viaduto" class="form-label">Viaduto (V) (0-10)</label>
+                <input type="number" id="viaduto" class="form-control" min="0" max="10" required>
+              </div>
+            </form>
+          </div>
         </div>
-    </section>
-
-    <!-- Rodapé -->
-    <footer class="bg-dark text-white text-center py-3">
-        <p>© 2024 Estadualização DER - Todos os direitos reservados.</p>
-    </footer>
-
-    <script>
+      </section>
+    
+      <!-- Seção: Escala de Qualidade (em coluna única) -->
+      <section id="escala-section" class="py-4">
+        <div class="container">
+          <div class="card shadow p-4 scale-down">
+            <h3 class="text-center">Escala de Qualidade</h3>
+            <table class="quality-scale table table-bordered">
+              <tr><td class="q-0">0 - Ausente</td></tr>
+              <tr><td class="q-1-3">1 – 3 - Baixa qualidade</td></tr>
+              <tr><td class="q-4-5">4 – 5 - Média qualidade</td></tr>
+              <tr><td class="q-6-7">6 – 7 - Boa qualidade</td></tr>
+              <tr><td class="q-8-9">8 – 9 - Muito boa qualidade</td></tr>
+              <tr><td class="q-10">10 - Ótima qualidade</td></tr>
+            </table>
+          </div>
+        </div>
+      </section>
+    
+      <!-- Seção: Resultado e Cálculo do IQI -->
+      <section id="resultado-section" class="py-4">
+        <div class="container text-center">
+          <button id="calcular-btn" class="btn btn-success mb-3" onclick="calcularIQI()">Calcular IQI</button>
+          <h2>Resultado do IQI: <span id="resultado"></span></h2>
+        </div>
+      </section>
+    
+      <!-- Seção: Laudo de Favorabilidade -->
+      <section id="laudo-section" class="py-4">
+        <div class="container">
+          <div class="card shadow p-4 scale-down">
+            <p class="fs-5">Deseja emitir o Laudo de Favorabilidade da Infraestrutura?</p>
+            <div class="mb-3">
+              <input type="radio" id="laudo-sim" name="emitLaudo" value="sim">
+              <label for="laudo-sim">Sim</label>
+              &nbsp;&nbsp;
+              <input type="radio" id="laudo-nao" name="emitLaudo" value="nao">
+              <label for="laudo-nao">Não</label>
+            </div>
+            <!-- Campos para o laudo (inicialmente ocultos) -->
+            <div id="report-fields" style="display: none;">
+              <div class="mb-3">
+                <label for="municipio" class="form-label">Município</label>
+                <input type="text" id="municipio" class="form-control">
+              </div>
+              <div class="mb-3">
+                <label for="rodovia" class="form-label">Rodovia/Trecho</label>
+                <input type="text" id="rodovia" class="form-control">
+              </div>
+              <button id="gerar-pdf-btn" class="btn btn-primary" onclick="gerarPDF()">Gerar Relatório PDF</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+      <!-- jsPDF -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+      <script>
+        // Cálculo do IQI com base nos 8 critérios (cada um com peso 1)
         function calcularIQI() {
-            const pesos = {
-                "faixa-dominio": 2, "pavimento": 2
-            };
-
-            let somaPonderada = 0, somaPesos = 0;
-
-            for (let id in pesos) {
-                const valor = parseInt(document.getElementById(id).value) || 0;
-                if (valor < 0 || valor > 10) {
-                    alert("Os valores devem estar entre 0 e 10.");
-                    return;
-                }
-                somaPonderada += valor * pesos[id];
-                somaPesos += 10 * pesos[id];
+          const fields = [
+            "faixa-dominio", "pavimento", "acostamento",
+            "sinalizacao-vertical", "sinalizacao-horizontal",
+            "sistema-drenagem", "ponte", "viaduto"
+          ];
+          let soma = 0;
+          for (let field of fields) {
+            const valor = parseFloat(document.getElementById(field).value);
+            if (isNaN(valor) || valor < 0 || valor > 10) {
+              alert("Preencha corretamente todos os campos (valores entre 0 e 10).");
+              return;
             }
-
-            const resultadoIQI = (somaPonderada / somaPesos).toFixed(2);
-            document.getElementById("resultado").textContent = resultadoIQI;
+            soma += valor;
+          }
+          const iqi = (soma / (fields.length * 10)).toFixed(2);
+          document.getElementById("resultado").textContent = iqi;
         }
-    </script>
-
-</body>
-</html>
+    
+        // Eventos para os botões de emissão do laudo
+        document.getElementById("laudo-sim").addEventListener("change", function() {
+          if (this.checked) {
+            document.getElementById("report-fields").style.display = "block";
+          }
+        });
+        document.getElementById("laudo-nao").addEventListener("change", function() {
+          if (this.checked) {
+            // Retorna para a página inicial da calculadora
+            window.location.href = "calculadora-iqi.html";
+          }
+        });
+    
+        // Geração do PDF conforme o modelo anexado
+        function gerarPDF() {
+          const { jsPDF } = window.jspdf;
+          const doc = new jsPDF();
+    
+          // Obtém os valores do formulário e do resultado
+          const municipio = document.getElementById("municipio").value;
+          const rodovia = document.getElementById("rodovia").value;
+          const iqiResult = document.getElementById("resultado").textContent;
+          const fields = [
+            "faixa-dominio", "pavimento", "acostamento",
+            "sinalizacao-vertical", "sinalizacao-horizontal",
+            "sistema-drenagem", "ponte", "viaduto"
+          ];
+          let criterios = {};
+          for (let field of fields) {
+            criterios[field] = document.getElementById(field).value;
+          }
+    
+          // Composição do PDF (ajuste as posições e textos conforme necessário)
+          let y = 10;
+          doc.setFontSize(12);
+          doc.text("LAUDO DE FAVORABILIDADE DA INFRAESTRUTURA", 105, y, { align: "center" });
+          y += 10;
+          doc.text("Município: " + municipio, 10, y);
+          y += 10;
+          doc.text("Rodovia/Trecho: " + rodovia, 10, y);
+          y += 10;
+          doc.text("----------------------------------------------------", 10, y);
+          y += 10;
+          doc.text("Critérios e Notas:", 10, y);
+          y += 10;
+          // Listagem dos critérios
+          const labels = {
+            "faixa-dominio": "Faixa de Domínio (FD)",
+            "pavimento": "Pavimento (P)",
+            "acostamento": "Acostamento (A)",
+            "sinalizacao-vertical": "Sinalização Vertical (SV)",
+            "sinalizacao-horizontal": "Sinalização Horizontal (SH)",
+            "sistema-drenagem": "Sistema de Drenagem (SD)",
+            "ponte": "Ponte (Po)",
+            "viaduto": "Viaduto (V)"
+          };
+          for (let field of fields) {
+            doc.text(labels[field] + ": " + criterios[field], 10, y);
+            y += 10;
+          }
+          doc.text("----------------------------------------------------", 10, y);
+          y += 10;
+          doc.text("Resultado do IQI: " + iqiResult, 10, y);
+          y += 10;
+          doc.text("----------------------------------------------------", 10, y);
+          y += 10;
+          doc.text("INTERPRETAÇÃO:", 10, y);
+          y += 10;
+          doc.text("Grau de Qualidade (0 a 10)  -  Classificação", 10, y);
+          y += 10;
+          doc.text("0  -  Ausente", 10, y);
+          y += 10;
+          doc.text("1 – 3  -  Baixa qualidade", 10, y);
+          y += 10;
+          doc.text("4 – 5  -  Média qualidade", 10, y);
+          y += 10;
+          doc.text("6 – 7  -  Boa qualidade", 10, y);
+          y += 10;
+          doc.text("8 – 9  -  Muito boa qualidade", 10, y);
+          y += 10;
+          doc.text("10  -  Ótima qualidade", 10, y);
+          y += 10;
+          doc.text("Valor de IQI: quanto mais próximo de 1, maior a favorabilidade.", 10, y);
+          y += 10;
+          doc.text("Indicador de Qualidade de Infraestrutura", 10, y);
+    
+          // Gera o download do PDF
+          doc.save("laudo_infraestrutura.pdf");
+        }
+      </script>
+    </body>
+    </html>
