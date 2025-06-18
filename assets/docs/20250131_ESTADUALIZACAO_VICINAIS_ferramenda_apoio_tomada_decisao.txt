@@ -1,0 +1,295 @@
+﻿
+
+
+
+
+
+
+
+
+Estadualização de vicinais: geração de ferramenta de apoio à tomada de decisão com base em indicadores de favorabilidade
+
+
+
+
+
+
+
+
+
+
+
+
+
+São Paulo, abril de 2024
+Lista de Figuras
+Figura 1 - Procedimentos metodológicos gerais para geração do índice de favorabilidade geral de trechos à estadualização.	5
+Figura 2 - Obtenção das variáveis a partir dos dados representantes dos critérios ambientais.	9
+Figura 3 - Obtenção das variáveis a partir dos dados representantes dos critérios de integração com o SRE.	10
+Figura 4 - Obtenção das variáveis a partir dos dados representantes dos critérios socioeconômicos.	10
+Figura 5 - Matriz de comparação pareada oriunda da aplicação de questionários.	17
+Figura 6 - Mapa do indicador espacial de favorabilidade de trechos de vicinais à estadualização.	19
+Figura 7 - Análise de sensibilidade de acordo com a abordagem proposta por Macul (2019).	20
+Figura 8 - Análise de sensibilidade de acordo com a abordagem proposta por Morris (1991).	21
+Figura 9 - Aplicabilidade do método à malha estadual de vicinais.	22
+
+
+
+
+Lista de tabelas
+Tabela 1 -Base de dados utilizados, contendo as categorias de agrupamento, formato do dado e a fonte.	3
+Tabela 2 - Variáveis e premissas utilizadas no estudo para obtenção do indicador espacial de favorabilidade.	6
+Tabela 3 - Dados e operadores utilizados para obtenção das variáveis.	8
+Tabela 4 - Escala de intensidade de importância da AHP.	12
+Tabela 5 - Indice randômico proposto por Saaty (2002).	13
+Tabela 6 - Elementos e descrição do grau de qualidade da infraestrutura a ser avaliada para estadualização de trechos.	15
+Tabela 6 - Relação de pesos globais por variável obtidos por meio da AHP.	18
+Tabela 7 - Peso dos elementos considerados para avaliação da qualidade de infraestrutura.	23
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sumário
+1	INTRODUÇÃO	1
+2	OBJETIVO	2
+2.1	Objetivos específicos	2
+3	METODOLOGIA	3
+3.1	Dados	3
+3.2	Procedimentos metodológicos	4
+3.2.1	Geração do indicador espacial de favorabilidade de trechos	5
+3.2.1.1	Cálculo das variáveis a partir dos critérios	7
+3.2.1.2	Análise Hierárquica de Processo (AHP)	11
+3.2.1.3	Análise de sensibilidade	13
+3.3	Aplicabilidade dos resultados	14
+3.4	Geração do indicador de qualidade da infraestrutura	14
+3.5	Cálculo do indicador de qualidade da infraestrutura	16
+4	RESULTADOS	17
+4.1	Indicador espacial de favorabilidade de trechos de vicinais à estadualização	17
+4.1.1	Análise de sensibilidade dos resultados	19
+4.1.2	Aplicabilidade do método	21
+4.2	Indicador de qualidade da infraestrutura	23
+5	CONSIDERAÇÕES FINAIS	24
+6	BIBLIOGRAFIA CITADA	25
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1 INTRODUÇÃO
+A estadualização de trechos vicinais pode ser definida como o processo administrativo e jurídico pelo qual uma rodovia ou estrada, anteriormente sob propriedade/dominialidade municipal, passa a integrar a malha rodoviária estadual, tornando-se, portanto, propriedade do governo estadual, que passará a gerir e administrar o trecho ou estrada estadualizada. A fundamentação desse procedimento deve basear-se em critérios técnicos que consideram, entre outros aspectos, a conectividade do trecho com o sistema rodoviário estadual e sua função estratégica na ligação entre centros urbanos e polos de desenvolvimento regional.
+Adicionalmente, a viabilidade da estadualização deve ser avaliada sob a ótica da infraestrutura mínima necessária para incorporação ao sistema estadual, incluindo a existência e avaliação de pontes e viadutos, sistema de sinalização eficiente, faixa de domínio e acostamento. Esses fatores são determinantes para garantir a funcionalidade e segurança da via no contexto da malha estadual.
+A incorporação de trechos vicinais à malha rodoviária estadual transcende a mera resposta a demandas isoladas e configura-se como um instrumento fundamental de planejamento territorial e infraestrutura viária. A estadualização pode ser vista como uma ação estratégica do Estado que visa otimizar a gestão da malha rodoviária, promovendo maior equidade no acesso à infraestrutura de transporte, favorecendo o desenvolvimento socioeconômico regional e aprimorando as condições de mobilidade da população. Esse processo fortalece a integração territorial, reduz assimetrias regionais e potencializa a eficiência logística ao viabilizar a conectividade entre municípios e corredores de transporte.
+Diante da complexidade e relevância dessa decisão, é imprescindível o estabelecimento de critérios técnicos objetivos e metodologias sólidas para subsidiar a avaliação e hierarquização da favorabilidade dos trechos à estadualização. Nesse contexto, o Departamento de Estradas de Rodagem do Estado de São Paulo (DER/SP), por meio da Coordenadoria de Estudos e Pesquisa da Diretoria de Planejamento (CEP-DP), desenvolveu um estudo técnico estruturado com uma ferramenta metodológica de suporte à tomada de decisão baseada em análise multicritério e modelagem espacial para sistematizar a identificação de trechos prioritários à estadualização. A metodologia adotada fundamenta-se na aplicação de indicadores geoespaciais, modelagem matemática e técnicas de análise hierárquica de decisão, embasando o processo decisório e minimizando a influência de fatores subjetivos. Os detalhes desse estudo encontram-se descritos nas seções subsequentes.
+
+
+
+
+
+
+2 OBJETIVO
+No contexto do processo de estadualização, o objetivo do presente estudo foi desenvolver uma ferramenta metodológica de suporte à tomada de decisão no processo de estadualização de trechos vicinais. A ferramenta é baseada na construção de indicadores de favorabilidade, obtidos por meio de técnicas de análise multicritério, considerando fatores técnicos, ambientais e socioeconômicos, a fim de hierarquizar os trechos candidatos com base em parâmetros estratégicos e operacionais, garantindo maior eficiência e equidade na gestão da malha rodoviária estadual. 
+2.1 Objetivos específicos
+Para alcançar o objetivo geral, os seguintes objetivos específicos foram delineados: 
+I. Definir e estruturar os critérios técnicos, ambientais e socioeconômicos relevantes para a avaliação da favorabilidade dos trechos de vicinais à estadualização.
+II. Elaborar e integrar um banco de dados geoespacial consolidado, contendo informações sobre infraestrutura, aspectos ambientais e desenvolvimento regional.
+III. Desenvolver um modelo de análise multicritério, utilizando a técnica de Análise Hierárquica de Processo (AHP), para atribuir pesos e hierarquizar os critérios estabelecidos.
+IV. Construir um indicador de favorabilidade multicritério para a estadualização de trechos, por meio da aplicação de álgebra de mapas.
+V. Desenvolver um indicador de qualidade da infraestrutura com base na avaliação de elementos estruturais e operacionais das vicinais.
+VI. Criar um indicador de favorabilidade socioeconômica considerando variáveis sociais, econômicas e de desenvolvimento humano.
+VII. Estabelecer um método de avaliação dos resultados da AHP para verificar a consistência dos resultados. 
+
+3 METODOLOGIA
+AVISO: Edição interrompida neste ponto. Continuar a partir daqui.
+Nesta seção, são apresentados os dados e a metodologia empregada na formulação dos três indicadores do estudo: o Indicador de Favorabilidade Multicritério (IFM), o Indicador de Qualidade da Infraestrutura (IQI) e o Indicador de Favorabilidade Socioeconômica (IFS). Esses indicadores foram desenvolvidos de maneira independente, permitindo análises isoladas ou integradas durante o processo decisório, conforme as especificidades da avaliação.
+Os dados utilizados foram obtidos de fontes oficiais e submetidos a um rigoroso processo de validação, a fim de mitigar eventuais inconsistências que pudessem comprometer a precisão das análises. Por exemplo, discrepâncias em coordenadas geoespaciais entre diferentes bases de dados foram identificadas e corrigidas por meio de procedimentos de normalização e refinamento cartográfico, garantindo maior coerência na representação espacial dos indicadores. Esse procedimento assegura a robustez dos resultados e a confiabilidade das inferências extraídas a partir dos indicadores desenvolvidos. Um fluxograma simplificado das etapas metodológicas pode ser observado na Figura 1.
+Figura 1 -Fluxograma simplificado dos procedimentos metodológicos empregados para obtenção dos indicadores de favorabilidade. 
+ 
+
+
+3.1 Construção do Indicador de Favorabilidade Multicritério (IFM)
+Os dados utilizados foram obtidos de fontes diversas, tais como Instituto Brasileiro de Geografia e Estatística (IBGE), Instituto Nacional de Colonização e Reforma Agrária (INCRA), Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (INEP), Instituto Geográfico e Cartográfico do estado de São Paulo (IGC), dentre outros. Os dados foram agrupados em três categorias: integração com o Sistema Rodoviário Estadual (SRE), socioeconômicos e ambientais, como pode ser observado na Tabela 1.
+Tabela 1 -Base de dados utilizados, contendo as categorias de agrupamento, formato do dado e a fonte.
+CRITÉRIOCLASSIFICAÇÃODADOFONTEInterligação com rodovias estaduais ou federaisIntegração com o Sistema Rodoviário Estadual (SRE)Vetor de linhas da malha viária estadualSIRGEO (2023)Conexão entre municípiosVetor de pontos com sedes municipaisIBGE (2023)Intersecção com área urbanaVetor de polígonos da macha urbana estadualIBGE (2019)Importância estratégicaSocioeconômicoVetor de polígono dos municípios contendo a produção (em toneladas) agropecuária IGC (2021) e   IBGE (2022)Vetor de pontos de escolas ruraisINEP (2023)Proximidade com Unidade de Conservação de Proteção Integral (UC-PI)AmbientalVetor de polígonos das UC-PIsICMBio (2023) e DATAGEO (2023)Proximidade com Unidade de Conservação de Uso Sustentável (UC-US)Vetor de polígonos das UC-USsICMBio (2023) e DATAGEO (2023)Proximidade com Terra Indígena (TI)Vetor de polígonos das TIsFUNAI (2023)Proximidade com Áreas Quilombolas (AQ)Vetor de polígonos das AQsINCRA (2023)
+A seleção dos dados foi pautada principalmente na relação que eles possuem com o objeto de estudo. Por exemplo, o vetor de pontos das sedes municipais serve para verificar a proximidade do trecho entre duas sedes municipais e, portanto, possibilita verificar se este trecho pode promover interligação entre essas sedes municipais. O vetor de escolas rurais serve para avaliação dos trechos que promovem acesso à essas escolas, uma vez que os critérios sociais são considerados relevantes para o processo de estadualização. Os dados ambientais foram selecionados, pois áreas protegidas ou com alguma restrição representam desafios para o DER do ponto de vista de operação e manutenção rodoviária. 
+3.2 Procedimentos metodológicos
+Os procedimentos metodológicos podem ser divididos em duas etapas gerais: a primeira etapa consistiu em gerar um indicador espacial de favorabilidade de trechos à estadualização considerando critérios ambientais, socioeconômicos e critérios de integração com o SRE. A segunda etapa consistiu na construção de um indicador de qualidade da infraestrutura (QI) a fim de avaliar os trechos das vicinais. Esta avaliação considera a análise de elementos relacionados à infraestrutura, tais como presença e qualidade da faixa de domínio, pavimento, acostamento, sinalização vertical e horizontal, sistema de drenagem, pontes e viadutos. A partir destes dois indicares, foi gerado o índice de favorabilidade geral de trechos, composto pela soma do indicador espacial com o indicador de qualidade de infraestrutura. É importante destacar que os indicadores poderão ser usados em conjunto (índice geral de favorabilidade de trechos) ou separadamente para determinar a favorabilidade de cada trecho à estadualização. O fluxograma geral dos procedimentos metodológicos para geração do índice geral de favorabilidade de trechos pode ser observado na Figura 1. 
+
+Figura 2 - Procedimentos metodológicos gerais para geração do índice de favorabilidade geral de trechos à estadualização.
+
+Como pode ser observado na Figura 1, as etapas gerais para gerar o indicador espacial de favorabilidade consistiram em definição dos critérios, obtenção das variáveis, aplicação de questionários às diretorias regionais do DER, hierarquização das variáveis de acordo com os questionários aplicados, aplicação da técnica AHP para geração de pesos e geração do mapa com o indicador. O indicador de qualidade de infraestrutura é baseado na avaliação dos elementos de infraestrutura. As etapas da construção do indicador espacial de favorabilidade de trechos à estadualização e do indicador de qualidade da infraestrutura estão detalhadas nas seções seguintes. 
+3.2.1 Geração do indicador espacial de favorabilidade de trechos
+A partir do conjunto de dados descrito Tabela 1, foram geradas as variáveis para representar os critérios selecionados. Essas variáveis são mapas contínuos em formato matricial1 com resolução espacial de 50 metros, ou seja, cada pixel do mapa tem 2500m² e armazena um valor específico relacionado a unidade de medida de cada variável gerada. Na Tabela 2 é possível observar a descrição das variáveis geradas a partir dos dados, bem como a premissa para sua inclusão no estudo. 
+Tabela 2 - Variáveis e premissas utilizadas no estudo para obtenção do indicador espacial de favorabilidade.
+DADOCLASSIFICAÇÃOVARIÁVELPREMISSAVetor de linhas da malha viária estadualIntegração com o Sistema Rodoviário Estadual (SRE)Distância de SP e BRQuanto menor a distância de uma SP ou uma BR, maior será a favorabilidade do trecho da vicinal à estadualização, pois maior a possibilidade de interligação com uma SP ou BR (DER, equipe técnica).Vetor de pontos com sedes municipaisDistância das sedes municipaisQuanto menor a distância entre duas sedes municipais, maior será a favorabilidade do trecho da vicinal à estadualização, pois representa maior possibilidade de conexão entre duas sedes municipais (DER, equipe técnica). Vetor de polígonos da mancha urbana estadualIntersecção com mancha urbanaQuando houver intersecção com a mancha urbana, menor será a favorabilidade do trecho da vicinal à estadualização, pois a intersecção com mancha urbana representa desafios desfavoráveis ao DER do ponto de vista de conservação e manutenção das vias (DER, equipe técnica).Vetor de polígono dos municípios contendo a produção (em toneladas) agropecuária SocioeconômicoProdução agropecuária municipalQuanto maior a produção agropecuária, maior será a favorabilidade do trecho da vicinal à estadualização, pois melhores condições viárias são demandadas para o escoamento da produção (DER, equipe técnica).Vetor de pontos de escolas ruraisDensidade de escolasQuanto maior a densidade de escolas, maior será a favorabilidade do trecho da vicinal à estadualização, pois favorecerá melhoria das condições de transporte para escolas, favorecendo as comunidades locais (DER, equipe técnica). Vetor de polígonos das UC-PIsAmbientalDistância de UC-PIsQuanto maior a distância de uma UC-PI, maior será a favorabilidade do trecho da vicinal à estadualização, pois a abertura e/ou melhoria de estradas/rodovias podem promover impactos socioambientais locais negativos (BECKER, 1982; MATRICARDI et al., 2010; PFAFF et al., 2009).Vetor de polígonos das UC-USsDistância de UC-USQuanto maior a distância de uma UC-US, maior será a favorabilidade do trecho da vicinal à estadualização, pois a abertura e/ou melhoria de estradas/rodovias podem promover impactos socioambientais locais negativos (BECKER, 1982; MATRICARDI et al., 2010; PFAFF et al., 2009).Vetor de polígonos das TIsDistância de TIsQuanto maior a distância de uma Tis, maior será a favorabilidade do trecho da vicinal à estadualização, pois a abertura e/ou melhoria de estradas/rodovias podem promover impactos socioambientais locais negativos (BECKER, 1982; MATRICARDI et al., 2010; PFAFF et al., 2009).Vetor de polígonos das AQsDistância de AQsQuanto maior a distância de AQ, maior será a favorabilidade do trecho da vicinal à estadualização, pois a abertura e/ou melhoria de estradas/rodovias podem promover impactos socioambientais locais negativos (BECKER, 1982; MATRICARDI et al., 2010; PFAFF et al., 2009).
+3.2.1.1 Cálculo das variáveis a partir dos critérios
+A partir dos dados, em formato vetorial, foram geradas as variáveis em formato matricial utilizando diferentes operadores. O cálculo das variáveis representativas dos critérios foi realizado utilizando operadores distintos disponíveis em um Sistema de Informação Geográfica (SIG). Cada pixel da variável gerada armazena um valor único proveniente do resultado da aplicação de um operador. A resolução espacial de todas as variáveis geradas é de 50 metros, ou seja, cada valor proveniente da aplicação do operador selecionado é armazenado em uma unidade espacial de 50 m². Na Tabela 3 são apresentados os operadores aplicados a cada um dos dados para obtenção das variáveis. 
+Tabela 3 - Dados e operadores utilizados para obtenção das variáveis.
+CLASSIFICAÇÃODADOOPERADORVARIÁVELDETALHES DA MEDIDAIntegração com o Sistema Rodoviário Estadual (SRE)Vetor de linhas da malha viária estadualDistância euclidianaDistância de SP e BRO valor do pixel corresponde à distância entre o centroide do pixel interseccionado pelo vetor e o centroide do pixel vizinho, de 50 em 50 metros.Vetor de pontos com sedes municipaisDistância das sedes municipaisVetor de polígonos da macha urbana estadualBooleano
+(presença e ausência)Intersecção com mancha urbanaO valor do pixel será zero quando na área ocupada pela mancha urbana e um nas demais áreas.SocioeconômicoVetor de polígono dos municípios contendo a produção (em toneladas) agropecuáriaAgregaçãoProdução agropecuária municipalO valor do pixel será o valor da produção agropecuária do município em megatoneladas. Todos os pixels do município terão o mesmo valor.Vetor de pontos de escolas ruraisDensidadeDensidade de escolasO valor do pixel será a quantidade de pontos de escola rurais em 1km².AmbientalVetor de polígonos das UC-PIsDistância euclidianaDistância de UC-PIsO valor do pixel corresponde à distância entre o centroide do pixel interseccionado pelo vetor e o centroide do pixel vizinho, de 50 em 50 metros.Vetor de polígonos das UC-USsDistância de UC-USVetor de polígonos das TIsDistância de TIsVetor de polígonos das AQsDistância de AQs
+Por meio da aplicação dos operadores foram obtidas as variáveis em formato matricial contínuo. Essas variáveis são medidas objetivas, distribuídas continuamente no espaço de 50 em 50 metros. As Figuras 2, 3 e 4 representam a obtenção das variáveis a partir dos dados selecionados para representar os critérios. 
+Figura 3 - Obtenção das variáveis a partir dos dados representantes dos critérios ambientais.
+
+Figura 4 - Obtenção das variáveis a partir dos dados representantes dos critérios de integração com o SRE.
+
+Figura 5 - Obtenção das variáveis a partir dos dados representantes dos critérios socioeconômicos.
+
+Após a aplicação dos operadores, todas as variáveis foram reescalonadas para valores entre zero e um utilizando um operador de transformação linear em que o valor máximo da variável é igualado a 1 e o valor mínimo a zero. É importante destacar que as variáveis cuja relação com o objeto de estudo é inversa, foram invertidas subtraindo-se 1 da variável. Por exemplo, a variável distância euclidiana de SP e BR, as menores distâncias representam as áreas mais favoráveis à estadualização e os valores numéricos para representar essa favorabilidade devem ser maiores. Nesse sentido, subtrai-se 1 da variável para inverter os valores do mapa. Assim, as áreas mais próximas de SP e BR recebem valores próximos de 1 e áreas mais distantes, valores próximos a zero.
+3.2.1.2 Análise Hierárquica de Processo (AHP)
+A Análise Hierárquica de Processo (AHP) é uma abordagem de comparação entre critérios que busca ponderar diferentes elementos para alcançar um objetivo geral. Neste processo, os critérios são comparados entre si e atribuídos pesos correspondentes. A condução da AHP segue etapas claras: i) identificação do problema; ii) estruturação da hierarquia de critérios; iii) comparação pareada entre esses critérios; e iv) determinação dos pesos de importância global com base nas comparações pareadas.
+Foram aplicados questionários às 14 diretorias regionais, a fim de obter suporte à hierarquização dos critérios, das quais 10 responderam. Este passo auxiliou na construção da matriz de comparação pareada, onde as variáveis foram hierarquizadas para obtenção dos pesos globais a partir da análise multicritério utilizando a técnica AHP, desenvolvida por Saaty (2002). A hierarquização das variáveis é realizada por meio de comparações em pares, onde são atribuídas intensidades de importância em uma escala de 1 a 9. Nessa escala, o valor 1 indica igual importância entre as variáveis comparadas, enquanto o valor 9 indica extrema importância de uma variável sobre a outra. A Tabela 4 apresenta a escala e o significado da intensidade de importância propostos por Saaty (2002).
+
+
+Tabela 4 - Escala de intensidade de importância da AHP.
+INTENSIDADE DE IMPORTÂNCIADEFINIÇÃODESCRIÇÃO DO GRAU DE IMPORTÂNCIA1Igual importânciaOs dois critérios contribuem igualmente para o objetivo3Importância pequena de um critério sobre o outroO julgamento favorece levemente um critério em relação ao outro5Importância grande de um critério sobre o outroO julgamento favorece fortemente um critério em relação ao outro7Importância muito grande de um critério sobre o outroUm critério é muito fortemente favorecido em relação ao outro.9Importância extrema de um critério sobre o outroA evidência favorece um critério em relação ao outro com o mais alto grau de certeza2, 4, 6 e 8Valores intermediáriosQuando se procura uma condição de compromisso entre dois critérios
+Durante o processo de hierarquização dos critérios, é construída a matriz de comparação pareada para determinar os pesos globais de cada variável. No presente estudo, a construção dessa matriz se deu por meio da aplicação dos questionários às diretorias regionais do DER. Os pesos globais foram calculados a partir dos autovetores normalizados e suas médias. A consistência da hierarquização das variáveis é avaliada por meio da Razão de Consistência (RC). Uma RC igual ou inferior a 0,1 indica uma hierarquização lógica das variáveis, enquanto valores superiores a 0,1 sugerem possíveis problemas de inconsistência, indicando uma hierarquização não lógica dos critérios. A RC é calculada pela Equação 1.
+
+		RC=IC/IR,	(1)
+
+      em que: IC é o Índice de Consistência e IR é o Índice Randômico que é tabelado. O IC é dado pela Equação 2, a seguir:
+      
+		IC=(μ-n)/(n-1),	(2)
+      em que μ é o valor médio dos autovetores e o n se refere ao número de critérios. Por sua vez, o IR é um valor tabelado que varia de acordo com o tamanho da matriz. Os valores de IR podem ser observados na Tabela 5.
+
+Tabela 5 - Indice randômico proposto por Saaty (2002). 
+Matriz123456789101112IR0,000,000,580,901,121,241,321,411,451,491,511,48
+Após a hierarquização das variáveis e a análise da Razão de Consistência, foram calculados pesos globais para cada variável. Esses pesos foram então empregados na geração de um mapa com um indicador espacial, utilizando uma álgebra de mapas com o operador de média ponderada. O mapa resultante apresenta valores variando entre zero e 1, onde valores próximos de zero indicam áreas menos favoráveis e valores próximos de 1 indicam áreas mais favoráveis à estadualização de trechos das vicinais. Além disso, uma análise de sensibilidade da AHP foi conduzida para avaliar os efeitos de mudanças nos pesos globais sobre os resultados obtidos, conforme detalhado na seção seguinte.
+3.2.1.3 Análise de sensibilidade
+A análise de sensibilidade foi empregada com o objetivo de examinar os potenciais impactos decorrentes da modificação dos pesos obtidos pela AHP no mapa de indicador de favorabilidade de trechos à estadualização. Neste estudo, foram adotadas duas abordagens distintas para a análise de sensibilidade. A primeira baseou-se na metodologia proposta por Macul (2019), que mapeia as áreas geográficas mais e menos sensíveis a alterações nos pesos da AHP. A segunda abordagem seguiu a metodologia proposta por Morris (1991), que identifica quais variáveis são mais ou menos sensíveis a mudanças nos pesos. 
+Na abordagem delineada por Macul (2019), a variação dos pesos da AHP é conduzida somando e subtraindo 0,5 aos pesos originais. Essa simulação é repetida 1.000 vezes para gerar 1.000 conjuntos distintos de pesos, os quais são então avaliados quanto à Razão de Consistência (RC). Aqueles conjuntos de pesos que resultam em RC superior a 0,1 são descartados, enquanto os restantes são utilizados para calcular médias ponderadas. Em seguida, é determinada a diferença entre o primeiro e o terceiro quartil das médias ponderadas simuladas, proporcionando uma medida da sensibilidade dos pesos. Quanto maior a discrepância entre esses quartis, maior a sensibilidade do mapa resultante à variação dos pesos. Posteriormente, a diferença entre os quartis é espacializada em um plano celular para demonstrar as áreas mais e menos sensíveis à alteração dos pesos na região de estudo.
+Na abordagem descrita por Morris (1991), também conhecida como método de efeito elementar, são realizadas aproximações discretas do valor médio da matriz das derivadas parciais das saídas do modelo em relação a cada uma das variáveis de entrada do modelo. A variação dos pesos é conduzida conforme o número de simulações determinadas pelo usuário. As médias e os desvios padrão das variações são calculados para determinar quais variáveis são mais sensíveis à alteração dos pesos. No presente estudo, foram conduzidas simulações com 1000 conjuntos de pesos diferentes, seguido do cálculo das médias e desvios padrão. Dessa forma, o método é capaz de identificar quais fatores são mais e menos sensíveis à alteração dos pesos.
+3.3 Aplicabilidade dos resultados
+Para determinar a favorabilidade dos trechos das vicinais à estadualização, considerando o indicador espacial, utilizou-se um algoritmo de extração de estatística zonal. A partir da base de estradas vicinais do estado de São Paulo, medidas de tendência central foram extraídas, tais como a média, moda e a mediana. As três medidas de tendência central foram analisadas e convencionou-se a média com a mais adequada para representar a favorabilidade do trecho. Como o mapa com o indicador espacial de favorabilidade foi produzido com resolução espacial de 50 metros, todo trecho com extensão superior a esta medida pode apresentar variabilidade de favorabilidade e por esta razão as estatísticas zonais foram computadas. Assim, a favorabilidade do trecho é representada pela média dos valores dos pixels que o trecho intersecta no mapa de favorabilidade. 
+3.4 Geração do indicador de qualidade da infraestrutura
+O indicador de qualidade de infraestrutura serve para complementar o indicador espacial de favorabilidade de trechos à estadualização. Juntos eles formam o índice de favorabilidade geral de trechos. É importante ressaltar que tanto o indicador espacial de favorabilidade e o indicador de qualidade de infraestrutura podem ser analisados separadamente pelo tomador de decisão, de acordo com as particularidades de cada trecho avaliado. 
+O indicador de qualidade da infraestrutura é concebido a partir da avaliação de alguns elementos associados à infraestrutura, selecionados pela equipe do DER. Esses elementos são considerados primordiais para seleção ou hierarquização do trecho candidato ao processo de estadualização. Cada elemento é avaliado como sendo presente ou não no trecho e, em caso positivo, são atribuídas notas para expressar seu grau de qualidade de acordo com uma escala que varia de zero a dez, onde zero representa a ausência do elemento e dez representa a presença e o grau de qualidade ótimo. A avaliação dos elementos deve considerar os procedimentos do Manual de Procedimentos para o Monitoramento da Qualidade das Obras Executadas Relativas à Recuperação, Ampliação e/ou Duplicação nas Rodovias do DER-SP (DER, 2018). A Tabela 6 sumariza os elementos selecionados e o grau de qualidade estipulado.
+Tabela 6 - Elementos e descrição do grau de qualidade da infraestrutura a ser avaliada para estadualização de trechos.
+ELEMENTOGRAU DE QUALIDADE (0 A 10) E DESCRIÇÃO DO GRAU DE
+QUALIDADEFaixa de Domínio (FD)0 ausentePavimento (P)3 baixa qualidadeAcostamento (A)5 média qualidadeSinalização vertical (SV)7boa qualidadeSinalização horizontal (SH)9muito boa qualidadeSistema de drenagem (SD)10ótima qualidadePonte (Po)Viaduto (V)
+Além do grau de qualidade da infraestrutura, foram considerados pesos para os diferentes elementos de análise, uma vez que para a estadualização, alguns elementos têm importância diferenciada em relação a outros. Para a definição dos pesos, foram aplicados questionários para as 14 Diretorias Regionais (DR) do DER, ou seja, cada DR responde um questionário. 
+A metodologia do questionário consiste em atribuir graus de importância a cada um dos elementos associados à infraestrutura. O grau de importância varia de um a cinco, em que um indica que o elemento tem pouca importância em relação aos demais e cinco indica que o elemento tem grande importância em relação aos demais. O peso do elemento é definido pela normalização da moda dos graus de importância identificados nas respostas. Nos casos em que o grau de importância do elemento for multimodal, o peso é definido pela normalização da média das modas do grau de importância. 
+3.5 Cálculo do indicador de qualidade da infraestrutura
+A partir da definição dos elementos de avaliação e dos pesos de cada elemento relacionado a infraestrutura, foi construído o indicador de qualidade, que varia de zero a 1,4, onde zero indicara baixíssima ou favorabilidade nula e 1,4 indica ótima favorabilidade do trecho à estadualização. O indicador de qualidade de infraestrutura (QI) pode ser observado na Equação 3.
+	QI=(((FD*pDR)+(P*pP)+(A*pA)+(SV*pSV)+(SH*pSH)+(SD*pSD)+(Po*pPo)+(V*pV)))/Max(3)onde:
+LEGENDADESCRIÇÃOPESOFDFaixa de DomíniopFDPPavimentopPAAcostamentopASVSinalização verticalpSVSHSinalização horizontalpSHSDSistema de drenagempSDPoPontepPoVViadutopVe Max é o valor máximo possível para a o somatório do produto entre o grau de qualidade e o peso de cada elemento associado à infraestrutura. A variável Max funciona para escalonar o resultado da expressão para a mesma ordem de grandeza do indicador espacial, ou seja, para valores entre zero e um. O cálculo da variável Max pode ser observado na Equação 4: 
+Max=((FD*pDR)+(P*pP)+(A*pA)+(SV*pSV)+(SH*pSH)+(SD*pSD)+(Po*pPo)+(V*pV))(4)onde:
+
+ELEMENTOVALOR MÁXIMO DO GRAU DE QUALIDADE DE INFRAESTRTUTURAPESOSFaixa de Domínio (FD)10pFDPavimento (P)10pPAcostamento (A)10pASinalização vertical (SV)10pSVSinalização horizontal (SH)10pSHSistema de drenagem (SD)10pSDPonte (Po)10pPoViaduto (V)10pVPara cálculo do valor máximo possível (Max) considera-se que todas as variáveis têm grau de importância máximo (10). Em seguida, basta multiplicar o grau de importância máximo de cada elemento por seu respectivo peso. O valor da variável Max é o somatório desses produtos.
+
+
+4 RESULTADOS
+Nesta seção são apresentados os resultados obtidos para o indicador espacial de favorabilidade de trechos das vicinais, respectivamente. Além disso, é apresentado o resultado da aplicabilidade do indicador espacial de favorabilidade na malha de vicinais do estado de São Paulo. 
+4.1 Indicador espacial de favorabilidade de trechos de vicinais à estadualização
+O primeiro resultado consiste na construção da matriz de comparação pareada para obtenção dos pesos por meio da técnica de análise multicritério AHP. Esta matriz, construída de acordo com a aplicação dos questionários às diretorias regionais do DER, pode ser observada na Figura 5.
+Figura 6 - Matriz de comparação pareada oriunda da aplicação de questionários.
+
+A partir da matriz de comparação pareada, foram obtidos os pesos globais por meio da AHP, que podem ser observados na Tabela 6.
+Tabela 6 - Relação de pesos globais por variável obtidos por meio da AHP.
+VARIÁVEISPESOSDistância de UC-PIs0,0378Distância de TIs0,0157Distância de AQs0,0242Distância de UC-USs0,0572Distância de SP e BR0,0812Distância de sedes municipais0,2890Intersecção com mancha urbana0,2222Densidade de escolas0,1265Produção agrícola municipal0,1463Razão de Consistência0,074Os resultados da aplicação da AHP revelaram que as variáveis com maior peso são distância sedes municipais, intersecção com mancha urbana, densidade de escolas e produção agrícola municipal, respectivamente. A razão de consistência igual a 0,074 indica que as variáveis foram logicamente hierarquizadas e, portanto, os pesos puderam ser utilizados para gerar o mapa com o indicador espacial de favorabilidade de trechos à estadualização. O mapa de favorabilidade pode ser observado na Figura 6. 
+Figura 7 - Mapa do indicador espacial de favorabilidade de trechos de vicinais à estadualização.
+
+Os resultados do indicador espacial de favorabilidade indicam que as regiões mais favoráveis à estadualização, considerando uma escala mais global, estão concentradas no centro norte do estado e as menos favoráveis estão concentradas na parte sudeste. É importante destacar que este mapa foi produzido com uma resolução espacial de 50 metros e que, portanto, análise mais locais podem ser conduzidas a fim de capturar a variabilidade da favorabilidade. 
+4.1.1 Análise de sensibilidade dos resultados
+A partir dos resultados obtidos com a álgebra de mapas e dos pesos da AHP, foram realizadas as análises de sensibilidades dos resultados utilizando duas abordagens específicas. A primeira, proposta por Macul (2019), o resultado é um mapa contendo as áreas mais e menos sensíveis a alteração dos pesos da AHP. Este mapa pode ser observado na Figura 7. 
+Figura 8 - Análise de sensibilidade de acordo com a abordagem proposta por Macul (2019).
+
+De acordo com a Figura 7 é possível perceber que as áreas menos sensíveis se localizam na parte centro-oeste e norte do estado. Isso dignifica dizer que, caso a hierarquização das variáveis mude e os pesos da AHP sejam alterados, muito provavelmente o resultado do mapa com o indicador espacial seja bem semelhante ao atual. O oposto ocorre na parte sul e sudeste, ou seja, caso haja alteração dos pesos da AHP, é provável que as regiões que mais sofram alteração dos resultados do mapa resultante sejam essas. 
+Além da abordagem de avaliação dos resultados proposta por Macul (2019), também foi realizada a análise baseada na metodologia proposta por Morris (1991), que identifica quais são as variáveis mais sensíveis a alteração de pesos da AHP. A Figura 8 mostra os resultados da aplicação desta abordagem. 
+Figura 9 - Análise de sensibilidade de acordo com a abordagem proposta por Morris (1991).
+
+A análise da Figura 8 mostra que as variáveis com maior média e desvio padrão após a realização de 1000 simulações com pesos diferentes são a distância de sedes municipais e intersecção com mancha urbana. Isso significa que, caso os pesos da AHP sejam alterados, as variáveis que terão maior influência nos resultados do mapa indicador de favorabilidade serão a distância de sedes municipais e intersecção com mancha urbana. É importante destacar que esta alteração possivelmente será reduzida, uma vez que os valores de média e desvio padrão são muito próximos a zero. Porém, considerando todo o conjunto de variáveis, a distância de sedes municipais e intersecção com mancha urbana representam as maiores variações e pode ser importante para o tomador de decisão conhecer quais são os critérios responsáveis por possíveis alterações no mapa resultante. 
+4.1.2 Aplicabilidade do método
+Após a obtenção do mapa com o indicador espacial de favorabilidade de trechos a estadualização e a avaliação dos resultados, aplicou-se o mapa de favorabilidade à toda a malha de vicinais do estado. Foram extraídas as medias de favorabilidade de todos os trechos das vicinais do estado gerando uma classificação geral dos trechos quanto à favorabilidade. Esta classificação pode ser observada na Figura 9. 
+Figura 10 - Aplicabilidade do método à malha estadual de vicinais.
+
+A análise da Figura 9 revela que, considerando uma escala mais global dos resultados, os trechos mais favoráveis à estadualização encontram-se espalhados ao longo de todo o estado. Pode-se destacar áreas no médio norte, no oeste, centro e sudeste do estado. É importante destacar que o mapa com o indicador espacial de favorabilidade foi gerado com uma resolução espacial de 50 metros, ou seja, análises locais podem ser realizadas, auxiliando a hierarquização de trechos em escalas correspondentes às Diretorias Regionais do DER, às microbacias, aos municipais ou até às microrregiões do município, por exemplo. Isto representa uma grande vantagem do ponto de vista de na análise da favorabilidade de trechos, pois permite aos tomadores de decisão realizarem avaliações em escalas locais, considerando as características individuais da região de análise.
+4.2 Indicador de qualidade da infraestrutura
+Das 14 diretorias regionais onde os questionários foram aplicados, 12 responderam. As respostam foram enviadas de forma anônima para minimizar possíveis efeitos subjetivos do método. Os pesos calculados a partir das repostas dos questionários podem ser observados na Tabela 7. 
+Tabela 7 - Peso dos elementos considerados para avaliação da qualidade de infraestrutura.
+ELEMENTOPESOFaixa de Domínio (FD)2Pavimento (P)2Acostamento (A)1,5Sinalização vertical (SV)1,1Sinalização horizontal (SH)1,1Sistema de drenagem (SD)1,1Ponte (Po)5Viaduto (V)5
+Como é possível observar na Tabela 7, os elementos Ponte (Po) e Viaduto (V) possuem maior peso, pois representam custos elevados de implementação caso sejam ausentes no trecho ou não atendam ao padrão rodoviário exigido pelas normas (ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS, 2003, 2013, 2014, 2021, 2022). Considerando os pesos obtidos dos elementos, o valor da variável Max foi de 188, conforme descrito a seguir. 
+Max =((FD×pFD)+(P×pP)+(A×pA)+(SV×pSV)+(Sh×pSH)+(SD×pSD)+(Po×pPo)+(V×pV))Max =(10×2)+(10×2)+(10×1.5)+(10×1.1)+(10×1.1)+(10×1.1)+(10×5)+(10×5)Max =20+20+15+11+11+11+50+50Max =188
+Para a o cálculo de índice de favorabilidade geral de trechos à estadualização, basta somar o valor extraído do indicador espacial ao valor do indicador de qualidade da infraestrutura. O índice de favorabilidade geral auxiliará principalmente na hierarquização nos casos em que houver muitos trechos candidatos.
+
+5 CONSIDERAÇÕES FINAIS
+O método apresenta uma abordagem sistemática e eficiente de suporte à tomada de decisão baseada em análise multicritério, pois é um método versátil, permitindo a inclusão e exclusão de critérios bem como a hierarquização de acordo com as demandas necessárias. Outra vantagem interessante é, no caso do indicador espacial, a oportunidade de explorar diversas alternativas de hierarquização de critérios, permitindo ao tomador de decisões visualizar quantos resultados forem possíveis.
+A análise de sensibilidade empregada no indicador espacial de favorabilidade permitiu avaliar os efeitos da subjetividade associada à hierarquização, possibilitando, inclusive, quantificá-los para garantir maior robustez dos resultados. O método se mostrou adequado para auxílio à tomada de decisão quanto a determinação dos trechos mais ou menos favoráveis à estadualização, pois apresentou hierarquização lógica das variáveis e a análise de sensibilidade permitiu avaliar as áreas mais e menos sensíveis às possíveis alterações dos pesos da AHP.
+O indicador de qualidade da infraestrutura foi construído com base em referências técnicas e em métodos já utilizados pelo DER-SP. A metodologia para a construção deste indicador apresenta processos estruturados, minimizando a subjetividade na tomada de decisão. Os pesos ponderadores dos elementos foram obtidos de forma interativa a fim de evitar endogenia. Este fato é importante para que o indicador consiga capturar de forma mais eficiente a heterogeneidade infraestrutural dos trechos candidatos.
+É importante destacar que a abordagem realizada neste estudo representa as etapas iniciais do processo de estadualização, contribuindo principalmente para a redução da quantidade de trechos a serem avaliados para as etapas finais de estadualização. Demais questões processuais, administrativas e locais devem ser tratadas de maneira individualizada para garantir sucesso na tomada de decisão relacionada à estadualização de trechos. Por fim, vale ressaltar que o presente método não substitui a expertise dos tomadores de decisão e funciona como suporte adicional do processo.
+
+6 BIBLIOGRAFIA CITADA
+ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. Ações e segurança nas estruturas - Procedimento. NBR 8681. Rio de Janeiro - RJ. 
+ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. Carga móvel rodoviária e de pedestres em pontes, viadutos, passarelas e outras estruturas. NBR 7188. Rio de Janeiro - RJ. 
+ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. Projeto de estruturas de concreto — Procedimento. NBR 6118. Rio de Janeiro - RJ. 
+ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. Projeto de pontes, viadutos e passarelas de concreto. NBR 7187. Rio de Janeiro - RJ. 
+ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. Projeto e execução de fundações. NBR 6122. Rio de Janeiro - RJ. 
+BECKER, Bertha K. Geopolítica da Amazônia: a Nova Fronteira de Recursos. Rio de Janeiro: Zahar, 1982. 
+CÂMARA, G. ;. Davis. C. ;. Monteiro, A. M. ;. D’Alge, J. C. Conceitos Básicos em Ciências da Geoinformação. Em: Introdução à Ciência da Geoinformação. 2a Edição ed. [s.l: s.n.]. 
+DEPARTAMENTO DE ESTRADAS E RODAGEM DO ESTADO DE SÃO PAULO (DER), São Paulo. Manual de procedimentos para o monitoramento da qualidade das obras executadas relativas à recuperação, ampliação e/ou duplicação nas rodovias do DER-SP. São Paulo. Disponível em: https://www.der.sp.gov.br/WebSite/Documentos/QualidadeDasObrasExecutadas.aspx. Acesso em: 1 maio. 2024.
+MACUL, Mateus de Souza. Índice de valoração da terra e desmatamento em uma região de fronteira agropecuária na Amazônia: região de Novo Progresso, Pará. 2019. Instituto Nacional de Pesquisas Espaciais, São José dos Campos, 2019.
+MATRICARDI, Eraldo A. T.; SKOLE, David L.; PEDLOWSKI, Marcos A.; CHOMENTOWSKI, Walter; FERNANDES, Luis Claudio. Assessment of tropical forest degradation by selective logging and fire using Landsat imagery. Remote Sensing of Environment, [S. l.], v. 114, n. 5, p. 1117–1129, 2010. DOI: 10.1016/j.rse.2010.01.001. Disponível em: http://dx.doi.org/10.1016/j.rse.2010.01.001.
+MORRIS, Max D. Factorial Sampling Plans for Preliminary Computational Experiments. Technometrics, [S. l.], v. 33, n. 2, p. 161, 1991. DOI: 10.2307/1269043.
+PFAFF, A.; BARBIERI, A.; LUDEWIGS, T.; MERRY, F.; PERZ, S.; REIS, E. Impactos de estradas na Amazônia brasileira. Amazonia and global change geophysical monograph, [S. l.], v. 185, p. 101–116, 2009. DOI: 10.1029/2008GM000737.
+SAATY, T. L. Decision making with the Analytic Hierarchy Process. Scientia Iranica, [S. l.], 2002. DOI: 10.1504/ijssci.2008.017590. 
+1 Na representação matricial, o espaço geográfico é tratado como uma superfície plana, onde cada quadrícula (pixel) está associada a uma porção do terreno. A resolução do sistema matricial é dada pela razão entre o tamanho do pixel no mapa e a área coberta por ele no terreno (CÂMARA, 2001).
+---------------
+
+------------------------------------------------------------
+
+---------------
+
+------------------------------------------------------------
+
+
+
+
+
+SECRETARIA DE MEIO AMBIENTE, INFRAESTRUTURA E LOGÍSTICA
+DEPARTAMENTO DE ESTRADAS DE RODAGEM
+DIRETORIA DE PLANEJAMENTO
+COORDENADORIA DE ESTUDOS E PESQUISA
+
+
+Avenida do Estado, 777 – Ponte Pequena – CEP: 01107-901 – São Paulo - SP
+Telefone (11) 3311-1400
+
+
+
+2
+
+

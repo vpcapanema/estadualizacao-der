@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstração dos Cabeçalhos - DER/SP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        .section-divider {
+            height: 50px;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #6c757d;
+            margin: 20px 0;
+        }
+        
+        /* Para demonstração, mostrar todos os cabeçalhos */
+        .header-original,
+        .header-proposta-1,
+        .header-proposta-2,
+        .header-proposta-3 {
+            display: block !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid p-0">
+        
+        <!-- Cabeçalho Original -->
+        <div class="section-divider">CABEÇALHO ORIGINAL (ATUAL)</div>
+        <header class="bg-primary text-white text-center py-5">
+            <div class="container">
+                <h1 class="display-4">FERRAMENTA METODOLÓGICA DE APOIO À TOMADA DE DECISÃO</h1>
+                <p class="lead">Estadualização de Rodovias Municipais DER/SP</p>
+                <p class="mb-0">Coordenadoria de Estudos e Pesquisas</p>
+            </div>
+        </header>        <!-- PROPOSTA 1: Moderno com Gradiente -->
+        <div class="section-divider">PROPOSTA 1: MODERNO COM GRADIENTE (VERSÃO FINAL)</div>
+        <header class="header-proposta-1 text-center">
+            <div class="container">
+                <p class="department">COORDENADORIA DE ESTUDOS E PESQUISAS - CEP</p>
+                <h1>ESTADUALIZAÇÃO DE ELEMENTOS RODOVIÁRIOS</h1>
+                <p class="subtitle">FERRAMENTA METODOLÓGICA DE APOIO À TOMADA DE DECISÃO</p>
+            </div>
+        </header>
+
+        <!-- PROPOSTA 2: Minimalista Elegante -->
+        <div class="section-divider">PROPOSTA 2: MINIMALISTA ELEGANTE</div>
+        <header class="header-proposta-2 text-center">
+            <div class="container">
+                <div class="icon-wrapper">
+                    <i class="fas fa-road"></i>
+                </div>
+                <h1>FERRAMENTA METODOLÓGICA DE APOIO À TOMADA DE DECISÃO</h1>
+                <p class="subtitle">Estadualização de Rodovias Municipais DER/SP</p>
+                <p class="department">Coordenadoria de Estudos e Pesquisas</p>
+            </div>
+        </header>
+
+        <!-- PROPOSTA 3: Institucional Robusto -->
+        <div class="section-divider">PROPOSTA 3: INSTITUCIONAL ROBUSTO</div>
+        <header class="header-proposta-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="logo-section">
+                            <img src="https://www.der.sp.gov.br/WebSite/img/logoDER.png" alt="Logo DER/SP" class="mb-3">
+                        </div>
+                        <h1>FERRAMENTA METODOLÓGICA DE APOIO À TOMADA DE DECISÃO</h1>
+                        <p class="subtitle">Estadualização de Rodovias Municipais DER/SP</p>
+                        <p class="department">Coordenadoria de Estudos e Pesquisas</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="stats-box">
+                            <span class="stats-number">1.247</span>
+                            <span class="stats-label">Rodovias Analisadas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Conteúdo de exemplo -->
+        <div class="container py-5">
+            <h2 class="text-center mb-4">Escolha seu Cabeçalho Favorito</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-primary">Proposta 1</h5>
+                            <p class="card-text">Design moderno com gradiente azul, animações suaves e elementos gráficos contemporâneos.</p>
+                            <ul class="list-unstyled">
+                                <li>✓ Visual impactante</li>
+                                <li>✓ Gradiente elegante</li>
+                                <li>✓ Animações CSS</li>
+                                <li>✓ Badge informativo</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-primary">Proposta 2</h5>
+                            <p class="card-text">Design minimalista e elegante com foco na legibilidade e profissionalismo.</p>
+                            <ul class="list-unstyled">
+                                <li>✓ Clean e profissional</li>
+                                <li>✓ Ícone representativo</li>
+                                <li>✓ Tipografia clara</li>
+                                <li>✓ Linha decorativa</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-primary">Proposta 3</h5>
+                            <p class="card-text">Design institucional robusto com logo, estatísticas e visual corporativo.</p>
+                            <ul class="list-unstyled">
+                                <li>✓ Visual institucional</li>
+                                <li>✓ Logo integrado</li>
+                                <li>✓ Box de estatísticas</li>
+                                <li>✓ Layout assimétrico</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

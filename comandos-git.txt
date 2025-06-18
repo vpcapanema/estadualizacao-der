@@ -1,0 +1,19 @@
+# Comandos para subir o projeto para GitHub
+
+# 1. Inicializar Git na pasta do projeto
+git init
+
+# 2. Adicionar todos os arquivos
+git add .
+
+# 3. Fazer o primeiro commit
+git commit -m "Primeira versão da Ferramenta de Estadualização DER/SP"
+
+# 4. Conectar com o repositório remoto (substitua SEU_USUARIO pelo seu username)
+git remote add origin https://github.com/SEU_USUARIO/estadualizacao-der.git
+
+# 5. Enviar arquivos para o GitHub
+git push -u origin main
+
+# IMPORTANTE: Substitua "SEU_USUARIO" pelo seu username do GitHub
+# Exemplo: git remote add origin https://github.com/vinicapanema/estadualizacao-der.git

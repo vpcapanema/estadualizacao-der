@@ -1,0 +1,809 @@
+/* Estilos Globais */
+body {
+  background-color: #f7f7f7;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
+  line-height: 1.6;
+  padding-top: 0; /* Garante que o conteúdo não fique atrás da barra fixa */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  color: #003366;
+}
+
+p {
+  text-align: justify;
+  margin-bottom: 1.5rem;
+}
+
+/* Cabeçalho */
+header {
+  background-color: #012242 !important;
+  color: #fff;
+  padding: 100px 0;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+header p {
+  font-size: 1.25rem;
+  margin-bottom: 0;
+}
+
+/* Menu de Navegação */
+.navbar {
+  background-color: #003366 !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-weight: 500;
+  color: #fff !important;
+}
+
+.nav-link {
+  font-weight: 500;
+  color: #fff !important;
+}
+
+/* Seções */
+section {
+  margin-bottom: 2.5rem;
+  padding: 80px 0;
+  background-color: #f5f5f5 !important;
+}
+
+/* Ajusta altura mínima da barra govsp-topo para garantir visual igual ao original */
+.govsp-topo {
+  width: 100vw;
+  min-height: unset;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  position: static;
+  top: unset;
+  left: unset;
+  right: unset;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+/* Remove qualquer espaçamento extra acima/abaixo da barra govsp-topo */
+.govsp-topo > * {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Deixa os containers das seções mais estreitos e com cantos arredondados */
+section > .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  padding: 2.5rem 2rem;
+}
+
+@media (max-width: 1200px) {
+  section > .container {
+    max-width: 98vw;
+    padding: 1.2rem 0.5rem;
+  }
+}
+
+/* Cards */
+.card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07), 0 1.5px 4px rgba(0,0,0,0.04);
+  border: 1.5px solid #e0e0e0;
+  margin-bottom: 2rem;
+  padding: 2rem 1.5rem;
+  transition: box-shadow 0.3s, border-color 0.3s;
+  /* Adiciona leve espaçamento interno e visual de retângulo */
+}
+
+.card:not(:last-child) {
+  margin-bottom: 2.5rem;
+}
+
+.card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12), 0 3px 8px rgba(0,0,0,0.08);
+  border-color: #b3b3b3;
+}
+
+/* Gráfico */
+canvas {
+  max-width: 100%;
+  height: auto !important;
+}
+
+/* Rodapé */
+footer, .govsp-footer {
+  background-color: #111112 !important;
+  color: #fff !important;
+  padding: 40px 0 !important;
+}
+
+footer h3 {
+  margin-bottom: 1rem;
+}
+
+footer p {
+  margin-bottom: 0.5rem;
+}
+
+/* Botões */
+.btn-primary {
+  background-color: #ffcc00;
+  color: #003366;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #e6b800;
+  color: #003366;
+}
+
+/* Links */
+a {
+  color: #003366;
+}
+
+a:hover {
+  color: #ffcc00;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  .navbar-nav {
+    margin-top: 1rem;
+  }
+}
+
+/* CSS do menu institucional DER-SP */
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
+
+.titulogeral {
+  color: #353739 !important;
+  text-decoration: none;
+}
+.titulogeral a:hover {
+  color: #fafafa;
+  text-decoration: none;
+}
+.titulo1 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  line-height: 1.1;
+  font-size: 33px;
+}
+.titulo2 {
+  text-align: left;
+  display: block;
+  width: 160px;
+  font-size: 14px;
+  font-weight: 400;
+}
+.nav__container {
+  width: 100%;
+  background-color: #fafafa;
+}
+.nav__mobile .nav__btn {
+  display: block;
+}
+.nav__mobile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav__logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #555;
+}
+.nav__menu {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 999;
+  position: relative;
+}
+.showing {
+  max-height: 37rem;
+  transition: all .5s;
+}
+.nav__menu li {
+  list-style: none;
+  position: relative;
+  white-space: nowrap;
+  padding: 1rem 0 0;
+}
+.nav__menu li a {
+  display: block;
+  font-size: 1.4rem;
+  color: #222;
+  text-decoration: none;
+}
+.nav-toggle {
+  display: block;
+  background-color: transparent;
+  width: 40px;
+  cursor: pointer;
+  padding: 4px;
+  opacity: 1;
+}
+.nav-toggle span {
+  position: relative;
+  display: block;
+  height: 4px;
+  border-radius: 35px;
+  width: 100%;
+  margin-top: 0;
+  background-color: #000;
+  transition: all .25s;
+}
+.nav-toggle span.mrg {
+  margin-top: 5px;
+}
+.nav-toggle.open span:first-child {
+  transform: rotate(45deg) translate(6.2px,6.2px);
+}
+.nav-toggle.open span:nth-child(2) {
+  width: 0;
+  opacity: 0;
+}
+.nav-toggle.open span:last-child {
+  transform: rotate(-45deg) translate(6.2px,-6.2px);
+}
+.nav__menu .dropdown ul {
+  display: flex;
+  flex-direction: column;
+  position: static;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all .4s;
+}
+.nav__menu .dropdown ul.show {
+  max-height: 100rem;
+  transition: all .4s;
+}
+.nav__menu .dropdown li a {
+  display: block;    
+  text-transform: capitalize;
+  color: #222;
+  text-decoration: none;
+}
+.nav__menu li a:hover {
+  color: #0062a3;
+}
+.nav__menu .dropdown>a:after {
+  content: "\f107";
+  font: normal normal normal 14px/1 FontAwesome;
+  font-weight: 900;
+  font-size: .875rem;
+  padding-left: 5px;
+  color: #7e7e7e;
+}
+.nav__menu .active.dropdown>a:after {
+  content: "\f106";
+}
+.nav__menu .dropdown .dropdown>a:after {
+  content: "\f107";
+  font: normal normal normal 14px/1 FontAwesome;
+  font-weight: 900;
+  font-size: .875rem;
+  padding-left: 5px;
+  color: #7e7e7e;
+}
+.nav__menu .dropdown .active.dropdown>a:after {
+  content: "\f106";
+}
+.menu-toggle {
+  max-height: 0;
+  overflow: hidden;
+}
+.menu-toggle,.menu-toggle.active {
+  transition: all .4s ease;
+}
+.menu-toggle.active {
+  max-height: 100vh;
+}
+.resize-animation-stopper * {
+  transition: none!important;
+  animation: none!important;
+}
+@media screen and (min-width: 800px) {
+  .menu-toggle {
+    display:flex!important;
+    max-height: 100vh;
+    overflow: visible;
+  }
+  .nav__container {
+    width: 100%;        
+    margin: auto;
+    flex-direction: row;
+    padding: 10px 40px 10px 40px;
+  }
+  .nav__container,.nav__mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav__mobile .nav__btn {
+    display: none;
+  }
+  .nav__logo img {
+    width: 100%;
+    max-width: 58px;
+  }
+  .nav__menu {
+    display: flex;
+    flex-direction: row;
+    max-height: 100%;
+    overflow: visible;
+  }
+  .nav__menu li {
+    list-style: none;
+    position: relative;
+    white-space: nowrap;
+    padding: 1rem;
+  }
+  .nav__menu li a {
+    font-size: 1.4rem;
+    color: #222;
+    text-decoration: none;
+  }
+  .nav__menu li a:hover {
+    color: #0062a3;
+  }
+  .nav__menu .dropdown {
+    position: relative;
+  }
+  .nav__menu .dropdown ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: -30px;
+    opacity: 0;
+    visibility: hidden;
+    padding: 0 1rem;
+    transition: all .4s ease;
+  }
+  .nav__menu .dropdown:hover>ul {
+    top: 100%;
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+    overflow: visible;
+    padding: 0 1rem;
+  }
+  .nav__menu .dropdown ul li {
+    padding: 1.5rem;
+    background-color: #fafafa;
+    position: relative;
+  }
+  .nav__menu .dropdown ul li:hover {
+    background-color: #3493e0;
+  }
+  .nav__menu .dropdown ul li a {
+    display: block;
+    color: #000;
+    text-transform: capitalize;
+  }
+  .nav__menu .dropdown ul li a:hover {
+    display: block;
+    color: #c7e0f5;
+  }
+  .nav__menu .dropdown:hover>a:after,.nav__menu .dropdown>a:after {
+    font: normal normal normal 14px/1 FontAwesome;
+    font-weight: 900;
+    font-size: .875rem;
+    padding-left: 5px;
+    color: #7c7c7c;
+  }
+  .nav__menu .dropdown:hover>a:after {
+    content: "\f106";
+  }
+  .nav__menu .dropdown .dropdown>a:after {
+    content: "\f105";
+  }
+  .nav__menu .dropdown .dropdown:hover>a:after {
+    content: "\f104";        
+  }
+  .nav__menu .dropdown>a:after {
+    content: "\f107";
+  }
+  .nav__menu .dropdown .dropdown:hover>a:after,.nav__menu .dropdown .dropdown>a:after {
+    font: normal normal normal 14px/1 FontAwesome;
+    font-weight: 900;
+    font-size: .875rem;
+    padding-left: 10px;
+    color: #000;
+  }
+  .nav__menu .dropdown .dropdown:hover>ul {
+    position: absolute;
+    top: 0;
+    left: calc(102% - 17px);
+    right: auto;
+    opacity: 1;
+    visibility: visible;
+  }
+  .nav__menu .dropdown .dropdown ul {
+    position: absolute;
+    top: 0;
+    left: calc(102% - 17px);
+    right: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .4s ease-in-out;
+  }
+}
+
+/* Estilos para corrigir os inline styles */
+.lead-custom {
+  font-size: 1.5rem;
+}
+
+.img-logo-custom {
+  padding: 0px;
+}
+
+.logo-der-custom {
+  width: 150px;
+}
+
+.govsp-footer {
+  background: #111 !important;
+  color: #fff !important;
+  padding: 40px 0 !important;
+}
+
+.govsp-footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.govsp-footer-logo {
+  margin-bottom: 16px;
+}
+
+.govsp-footer-links {
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.govsp-footer-links a {
+  color: #fff !important;
+}
+
+.govsp-footer-social {
+  margin-bottom: 12px;
+}
+
+.govsp-footer-social img {
+  margin: 0 8px;
+}
+
+.govsp-footer-copyright {
+  margin: 0;
+  color: #fff !important;
+}
+
+.iframe-grafico {
+  width: 100%;
+  height: 400px;
+  border: none;
+}
+
+/* Estilo para resultado oculto */
+.resultado-oculto {
+  display: none;
+}
+
+/* ==============================================
+   PROPOSTA 1: CABEÇALHO MODERNO COM GRADIENTE
+   ============================================== */
+
+/* Ocultar cabeçalho atual para mostrar apenas um dos novos */
+.header-original {
+  display: none;
+}
+
+/* Header Proposta 1 - Moderno com Gradiente */
+.header-proposta-1 {
+  background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 50%, #ced4da 100%);
+  color: #000000;
+  padding: 20px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-proposta-1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200"><polygon fill="rgba(255,255,255,0.05)" points="0,200 1000,50 1000,200"/></svg>');
+  background-size: cover;
+}
+
+.header-proposta-1 .container {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  text-align: center;
+}
+
+.header-proposta-1 .department {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #000000;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: fadeInUp 1s ease-out;
+  text-align: center;
+}
+
+.header-proposta-1 h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 0.5rem;
+  text-shadow: none;
+  animation: fadeInUp 1s ease-out 0.3s both;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.header-proposta-1 .subtitle {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 0.8rem;
+  animation: fadeInUp 1s ease-out 0.6s both;
+  text-shadow: none;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* ==============================================
+   PROPOSTA 2: CABEÇALHO MINIMALISTA ELEGANTE
+   ============================================== */
+
+.header-proposta-2 {
+  background: #ffffff;
+  color: #2c3e50;
+  padding: 60px 0;
+  border-bottom: 4px solid #3498db;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+}
+
+.header-proposta-2 h1 {
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.header-proposta-2 .subtitle {
+  font-size: 1.3rem;
+  color: #3498db;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.header-proposta-2 .subtitle::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: #3498db;
+  margin: 15px auto;
+  border-radius: 2px;
+}
+
+.header-proposta-2 .department {
+  font-size: 1rem;
+  color: #7f8c8d;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.header-proposta-2 .icon-wrapper {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(45deg, #3498db, #2980b9);
+  border-radius: 50%;
+  margin: 0 auto 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
+}
+
+.header-proposta-2 .icon-wrapper i {
+  font-size: 2rem;
+  color: white;
+}
+
+/* ==============================================
+   PROPOSTA 3: CABEÇALHO INSTITUCIONAL ROBUSTO
+   ============================================== */
+
+.header-proposta-3 {
+  background: linear-gradient(to right, #1a1a2e 0%, #16213e 50%, #0f3460 120%);
+  color: white;
+  padding: 40px 0;
+  position: relative;
+}
+
+.header-proposta-3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(to right, #f39c12, #e67e22, #d35400);
+}
+
+.header-proposta-3 .row {
+  align-items: center;
+}
+
+.header-proposta-3 .logo-section {
+  text-align: left;
+}
+
+.header-proposta-3 .logo-section img {
+  max-width: 120px;
+  margin-bottom: 20px;
+  filter: brightness(1.2);
+}
+
+.header-proposta-3 h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.header-proposta-3 .subtitle {
+  font-size: 1.2rem;
+  color: #f39c12;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.header-proposta-3 .department {
+  font-size: 1rem;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+.header-proposta-3 .stats-box {  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.header-proposta-3 .stats-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f39c12;
+  display: block;
+}
+
+.header-proposta-3 .stats-label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Animações */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .header-proposta-1 h1 {
+    font-size: 2rem;
+    color: #000000;
+  }
+  
+  .header-proposta-1 .subtitle {
+    font-size: 1.8rem;
+    color: #000000;
+  }
+  
+  .header-proposta-1 .department {
+    font-size: 1rem;
+    color: #000000;
+  }
+  
+  .header-proposta-2 h1,
+  .header-proposta-3 h1 {
+    font-size: 2rem;
+  }
+  
+  .header-proposta-2 .subtitle,
+  .header-proposta-3 .subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .header-proposta-3 .logo-section {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+}
+
+/* Seção FAD */
+.fad-section {
+  background: #f8f9fa;
+  border-top: 3px solid #0d6efd;
+}
+
+.fad-logo {
+  max-width: 200px;
+}
+
+.fad-content h3 {
+  color: #495057;
+  font-weight: 600;
+}
+
+.fad-content p {
+  color: #6c757d;
+  line-height: 1.6;
+}
+
+.fad-content .btn {
+  border-radius: 0;
+  text-transform: none;
+  font-weight: 500;
+}

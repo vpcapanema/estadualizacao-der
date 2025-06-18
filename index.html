@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FERRAMENTA METODOLÓGICA DE APOIO À TOMADA DE DECISÃO</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>FERRAMENTA METODOLÓGICA DE APOIO À TOMADA DE DECISÃO</title>    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   </head>
   <body>
@@ -22,58 +22,101 @@
                 <img src="https://saopaulo.sp.gov.br/barra-govsp/img/logo-governo-do-estado-sp.png" alt="Governo do Estado de São Paulo" height="38" class="logo">
               </a>
             </div> 
-          </div>
-          <nav class="govsp-navbar govsp-navbar-expand-lg">
-            <a class="govsp-social" href="https://www.flickr.com/governosp/" target="_blank"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-flickr.png" alt="Flickr Governo de São Paulo"></a>
-            <a class="govsp-social" href="https://www.linkedin.com/company/governosp/" target="_blank"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-linkedin.png" alt="Linkedin Governo de São Paulo"></a>
-            <a class="govsp-social" href="https://www.tiktok.com/@governosp" target="_blank"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-tiktok.png" alt="TikTok Governo de São Paulo"></a>
-            <a class="govsp-social" href="https://www.youtube.com/governosp/" target="_blank"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-youtube.png" alt="Youtube Governo de São Paulo"></a>
-            <a class="govsp-social" href="https://www.twitter.com/governosp/" target="_blank"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-twitter.png" alt="Twitter Governo de São Paulo"></a>
-            <a class="govsp-social" href="https://www.instagram.com/governosp/" target="_blank"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-insta.png" alt="Instagram Governo de São Paulo"></a>     
-            <a class="govsp-social" href="https://www.facebook.com/governosp/" target="_blank"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-facebook.png" alt="Facebook Governo de São Paulo"></a>
+          </div>          <nav class="govsp-navbar govsp-navbar-expand-lg">
+            <a class="govsp-social" href="https://www.flickr.com/governosp/" target="_blank" rel="noopener"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-flickr.png" alt="Flickr Governo de São Paulo"></a>
+            <a class="govsp-social" href="https://www.linkedin.com/company/governosp/" target="_blank" rel="noopener"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-linkedin.png" alt="Linkedin Governo de São Paulo"></a>
+            <a class="govsp-social" href="https://www.tiktok.com/@governosp" target="_blank" rel="noopener"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-tiktok.png" alt="TikTok Governo de São Paulo"></a>
+            <a class="govsp-social" href="https://www.youtube.com/governosp/" target="_blank" rel="noopener"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-youtube.png" alt="Youtube Governo de São Paulo"></a>
+            <a class="govsp-social" href="https://www.twitter.com/governosp/" target="_blank" rel="noopener"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-twitter.png" alt="Twitter Governo de São Paulo"></a>
+            <a class="govsp-social" href="https://www.instagram.com/governosp/" target="_blank" rel="noopener"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-insta.png" alt="Instagram Governo de São Paulo"></a>     
+            <a class="govsp-social" href="https://www.facebook.com/governosp/" target="_blank" rel="noopener"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-facebook.png" alt="Facebook Governo de São Paulo"></a>
             <p class="govsp-social">/governosp</p>
             <div id="separador-nav"></div>
             <a class="govsp-acessibilidade" href="javascript:mudaTamanho('body', 1);"><img class="govsp-acessibilidade" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-big-font.png" alt="Aumentar Fonte"></a>
             <a class="govsp-acessibilidade" href="javascript:mudaTamanho('body', -1);"><img class="govsp-acessibilidade" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-small-font.png" alt="Diminuir Fonte"></a>
             <a class="govsp-acessibilidade" href="#" id="altocontraste" accesskey="3" onclick="window.toggleContrast()" onkeydown="window.toggleContrast()"><img class="govsp-acessibilidade" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-contrast.png" alt="Contraste"></a>
-            <a class="govsp-acessibilidade" href="http://www.saopaulo.sp.gov.br/fale-conosco/comunicar-erros/" title="Comunicar Erros" target="_blank"><img class="govsp-acessibilidade" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-error-report.png"></a>
+            <a class="govsp-acessibilidade" href="http://www.saopaulo.sp.gov.br/fale-conosco/comunicar-erros/" title="Comunicar Erros" target="_blank" rel="noopener"><img class="govsp-acessibilidade" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-error-report.png" alt="Comunicar Erros"></a>
           </nav>
         </div>
         <div class="govsp-kebab">
           <figure></figure>
           <figure class="govsp-middle"></figure>
           <p class="govsp-cross"></p>
-          <figure></figure>
-          <ul class="govsp-dropdown" id="govsp-kebab">               
+          <figure></figure>          <ul class="govsp-dropdown" id="govsp-kebab">               
             <li></li>
-            <li><a class="govsp-social" href="https://www.flickr.com/governosp/" target="_blank"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-flickr.png" alt="Flickr Governo de São Paulo"></a></li>
-            <li><a class="govsp-social" href="https://www.linkedin.com/company/governosp/" target="_blank"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-linkedin.png" alt="Linkedin Governo de São Paulo"></a></li>
-            <li><a class="govsp-social" href="https://www.tiktok.com/@governosp" target="_blank"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-tiktok.png" alt="TikTok Governo de São Paulo"></a></li>
-            <li><a class="govsp-social" href="https://www.twitter.com/governosp/" target="_blank"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-twitter.png" alt="Twitter Governo de São Paulo"></a></li>
-            <li><a class="govsp-social" href="https://www.youtube.com/governosp/" target="_blank"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-youtube.png" alt="Youtube Governo de São Paulo"></a></li>                      
-            <li><a class="govsp-social" href="https://www.instagram.com/governosp/" target="_blank"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-insta.png" alt="Instagram Governo de São Paulo"></a></li>
-            <li><a class="govsp-social" href="https://www.facebook.com/governosp/" target="_blank"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-facebook.png" alt="Facebook Governo de São Paulo"></a></li>
+            <li><a class="govsp-social" href="https://www.flickr.com/governosp/" target="_blank" rel="noopener"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-flickr.png" alt="Flickr Governo de São Paulo"></a></li>
+            <li><a class="govsp-social" href="https://www.linkedin.com/company/governosp/" target="_blank" rel="noopener"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-linkedin.png" alt="Linkedin Governo de São Paulo"></a></li>
+            <li><a class="govsp-social" href="https://www.tiktok.com/@governosp" target="_blank" rel="noopener"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-tiktok.png" alt="TikTok Governo de São Paulo"></a></li>
+            <li><a class="govsp-social" href="https://www.twitter.com/governosp/" target="_blank" rel="noopener"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-twitter.png" alt="Twitter Governo de São Paulo"></a></li>
+            <li><a class="govsp-social" href="https://www.youtube.com/governosp/" target="_blank" rel="noopener"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-youtube.png" alt="Youtube Governo de São Paulo"></a></li>                      
+            <li><a class="govsp-social" href="https://www.instagram.com/governosp/" target="_blank" rel="noopener"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-insta.png" alt="Instagram Governo de São Paulo"></a></li>
+            <li><a class="govsp-social" href="https://www.facebook.com/governosp/" target="_blank" rel="noopener"><img class="govsp-icon-social" src="https://saopaulo.sp.gov.br/barra-govsp/img/i-facebook.png" alt="Facebook Governo de São Paulo"></a></li>
             <li><p class="govsp-social">/governosp</p></li>
-          </ul> 
+          </ul>
         </div>
       </div>
       <script src="https://saopaulo.sp.gov.br/barra-govsp/js/script-topo.js"></script>
       <script src="https://saopaulo.sp.gov.br/barra-govsp/js/script-contrast.js"></script>
       <script src="https://saopaulo.sp.gov.br/barra-govsp/js/script-tamanho-fonte.js"></script>
       <script src="https://saopaulo.sp.gov.br/barra-govsp/js/script-scroll.js"></script>
-    </section>
-
-    <!-- Cabeçalho do projeto -->
-    <header class="bg-primary text-white text-center py-5">
+    </section>    <!-- Cabeçalho original (oculto) -->
+    <header class="bg-primary text-white text-center py-5 header-original">
       <div class="container">
         <h1 class="display-4">FERRAMENTA METODOLÓGICA DE APOIO À TOMADA DE DECISÃO</h1>
-        <p class="lead text-center" style="font-size: 1.5rem;">Estadualização de Rodovias Municipais DER/SP</p>
+        <p class="lead text-center lead-custom">Estadualização de Rodovias Municipais DER/SP</p>
         <p class="mb-0 text-center">Coordenadoria de Estudos e Pesquisas</p>
+      </div>
+    </header>    <!-- ==============================================
+         PROPOSTA 1: CABEÇALHO MODERNO COM GRADIENTE
+         ============================================== -->    <!-- Proposta 1 (oculta) -->
+    <!-- <header class="header-proposta-1 text-center">
+      <div class="container">
+        <p class="department">COORDENADORIA DE ESTUDOS E PESQUISAS - CEP</p>
+        <h1>ESTADUALIZAÇÃO DE ELEMENTOS RODOVIÁRIOS</h1>
+        <p class="subtitle">FERRAMENTA METODOLÓGICA DE APOIO À TOMADA DE DECISÃO</p>
+      </div>
+    </header> -->
+
+    <!-- ==============================================
+         PROPOSTA 2: CABEÇALHO MINIMALISTA ELEGANTE (ATIVA)
+         ============================================== -->    <!-- Proposta 2 (oculta) -->
+    <!-- <header class="header-proposta-2 text-center">
+      <div class="container">
+        <div class="icon-wrapper">
+          <i class="fas fa-road"></i>
+        </div>
+        <h1>ESTADUALIZAÇÃO DE ELEMENTOS RODOVIÁRIOS</h1>
+        <p class="subtitle">FERRAMENTA METODOLÓGICA DE APOIO À TOMADA DE DECISÃO</p>
+        <p class="department">COORDENADORIA DE ESTUDOS E PESQUISAS - CEP</p>
+      </div>
+    </header> -->
+
+    <!-- ==============================================
+         PROPOSTA 3: CABEÇALHO INSTITUCIONAL ROBUSTO (ATIVA)
+         ============================================== -->
+    <header class="header-proposta-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="logo-section">
+              <img src="https://www.der.sp.gov.br/WebSite/img/logoDER.png" alt="Logo DER/SP" class="mb-3">
+            </div>
+            <p class="department">COORDENADORIA DE ESTUDOS E PESQUISAS - CEP</p>
+            <h1>ESTADUALIZAÇÃO DE ELEMENTOS RODOVIÁRIOS</h1>
+            <p class="subtitle">FERRAMENTA METODOLÓGICA DE APOIO À TOMADA DE DECISÃO</p>
+          </div>
+          <div class="col-lg-4">
+            <div class="stats-box">
+              <span class="stats-number">1.247</span>
+              <span class="stats-label">Rodovias Analisadas</span>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
 
     <!-- Menu institucional DER-SP -->
-    <div class="col-md-12 col-xs-12 img_logo" style="padding:0px">           
+    <div class="col-md-12 col-xs-12 img_logo img-logo-custom">           
       <div class="nav__container">
         <div class="nav__mobile">
           <a class="titulogeral" href="#introducao">
@@ -83,49 +126,80 @@
           <div class="nav__btn">
             <a aria-label="Mobile menu" class="nav-toggle fade"><span></span><span class="mrg"></span><span class="mrg"></span></a>
           </div>
-        </div>               
-        <nav class="menu-toggle">
+        </div>         <nav class="menu-toggle">
           <ul class="nav__menu">
             <li><a href="#introducao"><b>Início</b></a></li>
             <li><a href="#metodologia"><b>Metodologia</b></a></li>
             <li><a href="#indicadores"><b>Indicadores</b></a></li>
             <li><a href="#resultados"><b>Resultados</b></a></li>
-            <li><a href="#numeros"><b>Estadualização em Números</b></a></li>
+            <li><a href="#consideracoes"><b>Considerações</b></a></li>
+            <li><a href="#fad"><b>FAD</b></a></li>
             <li><a href="#contato"><b>Contato</b></a></li>
           </ul>
         </nav>
-        <img src="https://www.der.sp.gov.br/WebSite/img/logoDER.png" class="img-responsive logo-menu logoPadrao" alt="Logo Tipo do DERSP" style="width: 150px;">
+        <img src="https://www.der.sp.gov.br/WebSite/img/logoDER.png" class="img-responsive logo-menu logoPadrao logo-der-custom" alt="Logo Tipo do DERSP">
       </div>     
-    </div>
-
-    <!-- Seção: Introdução -->
+    </div>    <!-- Seção: Introdução -->
     <section id="introducao" class="py-5">
       <div class="container">
-        <h2 class="text-center mb-4">O que é a Estadualização de Rodovias Municipais?</h2>
+        <h2 class="text-center mb-4">O que é a Estadualização de Elementos Rodoviários?</h2>
         <p class="text-justify">
-          É o processo administrativo e legal de transferência de dominialidade/propriedade, gestão e administração de trechos rodoviários municipais para o estado, visando melhorar a infraestrutura e promover o desenvolvimento regional.
+          A estadualização de elementos rodoviários pode ser definida como o processo administrativo e jurídico pelo qual uma rodovia ou estrada, anteriormente sob propriedade/dominialidade municipal, passa a integrar a malha rodoviária estadual, tornando-se, portanto, propriedade do governo estadual, que passará a gerir e administrar o elemento ou estrada estadualizada.
+        </p>
+        <p class="text-justify">
+          A fundamentação desse procedimento deve basear-se em critérios técnicos que consideram, entre outros aspectos, a conectividade do elemento com o sistema rodoviário estadual e sua função estratégica na ligação entre centros urbanos e polos de desenvolvimento regional.
+        </p>
+        <p class="text-justify">
+          A incorporação de elementos rodoviários à malha rodoviária estadual transcende a mera resposta a demandas isoladas e configura-se como um instrumento fundamental de planejamento territorial e infraestrutura viária, promovendo maior equidade no acesso à infraestrutura de transporte, favorecendo o desenvolvimento socioeconômico regional e aprimorando as condições de mobilidade da população.
         </p>
         <div class="text-center">
-          <a href="#metodologia" class="btn btn-primary btn-lg">Saiba Mais</a>
+          <a href="#metodologia" class="btn btn-primary btn-lg me-3">Saiba Mais</a>
+          <a href="assets/docs/20250131_ESTADUALIZACAO_VICINAIS_ferramenda_apoio_tomada_decisao.pdf" target="_blank" rel="noopener" class="btn btn-outline-primary btn-lg">
+            <i class="fas fa-download me-2"></i>Nota Técnica
+          </a>
+        </div>
+      </div>
+    </section><!-- Seção: Metodologia -->
+    <section id="metodologia" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-4">Metodologia</h2>        <p class="text-justify">
+          O estudo desenvolveu uma ferramenta metodológica de suporte à tomada de decisão no processo de estadualização de elementos rodoviários, baseada na construção de três indicadores de favorabilidade obtidos por meio de técnicas de análise multicritério, considerando fatores técnicos, ambientais e socioeconômicos.
+        </p>
+        <div class="row">
+          <div class="col-md-6">
+            <h4>Procedimentos Metodológicos</h4>
+            <p class="text-justify">
+              Os procedimentos foram divididos em duas etapas principais: a primeira consistiu em gerar um <strong>indicador espacial de favorabilidade</strong> considerando critérios ambientais, socioeconômicos e de integração com o Sistema Rodoviário Estadual (SRE). A segunda etapa consistiu na construção de um <strong>indicador de qualidade da infraestrutura (IQI)</strong> para avaliar elementos relacionados à infraestrutura dos elementos rodoviários.
+            </p>
+            <h4>Análise Hierárquica de Processo (AHP)</h4>
+            <p class="text-justify">
+              A técnica AHP foi utilizada para ponderar diferentes critérios através de comparações pareadas. Foram aplicados questionários às 14 diretorias regionais do DER/SP (10 responderam) para hierarquizar as variáveis usando uma escala de 1 a 9, onde 1 indica igual importância e 9 indica extrema importância de uma variável sobre outra.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Dados Utilizados</h5>
+                <ul class="list-unstyled">
+                  <li><strong>Fontes:</strong> IBGE, INCRA, INEP, IGC, ICMBio, FUNAI</li>
+                  <li><strong>Critérios SRE:</strong> Malha viária estadual, sedes municipais, área urbana</li>
+                  <li><strong>Critérios Socioeconômicos:</strong> Produção agropecuária, escolas rurais</li>
+                  <li><strong>Critérios Ambientais:</strong> Unidades de Conservação, Terras Indígenas, Áreas Quilombolas</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <div class="card">
+            <div class="card-body p-4 text-center">
+              <h3 class="card-title text-primary mb-4">Fluxograma da Metodologia</h3>
+              <img src="assets/images/fluxograma_metodologia.jpg" alt="Fluxograma da Metodologia" class="img-fluid shadow-lg rounded">
+            </div>
+          </div>
         </div>
       </div>
     </section>
-
-    <!-- Seção: Metodologia -->
-    <section id="metodologia" class="py-5 bg-light">
-      <div class="container">
-        <h2 class="text-center mb-4">Metodologia</h2>
-        <p class="text-justify">
-          Construímos indicadores de favorabilidade para classificar e hierarquizar as rodovias municipais candidatas à estadualização. Desenvolvemos três indicadores principais: o <strong>Indicador de Favorabilidade Multicritério (IFM)</strong>, baseado em critérios técnicos, como conectividade com a malha rodoviária estadual; critérios ambientais, como a proximidade de áreas protegidas; e critérios econômicos, como a inserção em municípios com alta produção agrícola.
-        </p>
-        <p class="text-justify">
-          O <strong>Indicador de Qualidade da Infraestrutura (IQI)</strong> determina a favorabilidade a partir da avaliação dos elementos estruturais da via, como pavimento, acostamento, sinalização, drenagem, pontes e viadutos. Já o <strong>Indicador de Favorabilidade Socioeconômica (IFS)</strong> classifica os trechos considerando a condição socioeconômica dos municípios, aplicando a lógica da contraposição: quanto mais desenvolvido o município, menor a necessidade da estadualização.
-        </p>
-        <<div class="text-center">
-          <img src="https://vinicapanema.github.io/estadualizacao-der/data/fluxograma_metodologia.jpg" alt="Fluxograma da Metodologia" class="img-fluid shadow-lg">
-      </div>
-  </div>
-</section>
 
     <!-- Seção: Indicadores -->
     <section id="indicadores" class="py-5">
@@ -135,14 +209,12 @@
               <!-- IFM -->
               <div class="col-md-4 mb-4">
                   <div class="card h-100 shadow">
-                      <div class="card-body">
-                          <h3 class="card-title">Indicador de Favorabilidade Multicritério (IFM)</h3>
+                      <div class="card-body">                          <h3 class="card-title">Indicador de Favorabilidade Multicritério (IFM)</h3>
                           <p class="card-text text-justify">
-                              O IFM avalia a favorabilidade de um trecho ou rodovia à estadualização considerando três conjuntos de critérios: técnicos, ambientais e econômicos. Critérios técnicos incluem a conectividade com a malha rodoviária estadual e a importância estratégica da via. Os ambientais consideram a proximidade com áreas protegidas, enquanto os econômicos analisam a inserção em municípios com alta produção agrícola. Para atribuir pesos a cada critério, utilizou-se a técnica de Análise Hierárquica de Processo (AHP), baseada na comparação pareada de variáveis. O resultado é um raster espacial com resolução de 50x50 metros, onde cada pixel armazena um valor de favorabilidade, calculado por meio de álgebra de mapas ponderada pelos pesos da AHP.
-                          </p>
-                          <ul>
-                              <li><a href="https://vinicapanema.github.io/estadualizacao-der/data/INDICADOR%20ESPACIAL%20MULTICRIT%C3%89RIO.pdf#zoom=page-fit" target="_blank">Mapa do Indicador Multicritério de Favorabilidade</a></li>
-                              <li><a href="https://vinicapanema.github.io/estadualizacao-der/data/SENSIBILIDADE.pdf#zoom=page-fit" target="_blank">Análise de Sensibilidade do IMF</a></li>
+                              O IFM avalia a favorabilidade de elementos rodoviários à estadualização considerando três categorias de critérios: integração com o Sistema Rodoviário Estadual (SRE), aspectos socioeconômicos e fatores ambientais. Os critérios de integração incluem proximidade com rodovias estaduais/federais, conexão entre municípios e intersecção com área urbana. Os critérios socioeconômicos consideram produção agropecuária municipal e densidade de escolas rurais. Os ambientais avaliam proximidade com Unidades de Conservação e Terras Indígenas. Utilizou-se a técnica AHP (Análise Hierárquica de Processo) com questionários aplicados às Diretorias Regionais para definir pesos. O resultado é um mapa matricial com resolução de 50m, onde cada pixel armazena valores de 0 a 1.
+                          </p><ul>
+                              <li><a href="assets/docs/INDICADOR ESPACIAL MULTICRITÉRIO.pdf#zoom=page-fit" target="_blank" rel="noopener">Mapa do Indicador Multicritério de Favorabilidade</a></li>
+                              <li><a href="assets/docs/SENSIBILIDADE.pdf#zoom=page-fit" target="_blank" rel="noopener">Análise de Sensibilidade do IMF</a></li>
                           </ul>
                       </div>
                   </div>
@@ -151,13 +223,12 @@
               <!-- IFS -->
               <div class="col-md-4 mb-4">
                   <div class="card h-100 shadow">
-                      <div class="card-body">
-                          <h3 class="card-title">Indicador de Favorabilidade Socioeconômica (IFS)</h3>
+                      <div class="card-body">                          <h3 class="card-title">Indicador de Favorabilidade Socioeconômica (IFS)</h3>
                           <p class="card-text text-justify">
-                              O IFS avalia a favorabilidade dos trechos à estadualização com base no nível de desenvolvimento socioeconômico dos municípios. Esse indicador opera sob a lógica da contraposição: municípios menos desenvolvidos apresentam maior favorabilidade à estadualização de seus trechos. O cálculo é feito a partir da normalização e ponderação de variáveis como PIB municipal, PIB per capita, taxa de analfabetismo e índice de vulnerabilidade social. Os pesos das variáveis foram definidos com base em estudos acadêmicos e indicadores oficiais. O resultado final varia de 0 a 1, sendo que valores mais altos indicam menor favorabilidade para a estadualização.
+                              O IFS avalia a favorabilidade dos elementos rodoviários à estadualização com base no nível de desenvolvimento socioeconômico dos municípios. Esse indicador opera sob a lógica da contraposição: municípios menos desenvolvidos apresentam maior favorabilidade à estadualização de seus elementos rodoviários. O cálculo é feito a partir da normalização e ponderação de variáveis como PIB municipal, PIB per capita, taxa de analfabetismo e índice de vulnerabilidade social. Os pesos das variáveis foram definidos com base em estudos acadêmicos e indicadores oficiais. O resultado final varia de 0 a 1, sendo que valores mais altos indicam menor favorabilidade para a estadualização.
                           </p>
                           <ul>
-                              <li><a href="https://vinicapanema.github.io/estadualizacao-der/data/INDICADOR_SOCIOECONOMICO.pdf#zoom=page-fit" target="_blank">Mapa do Indicador de Favorabilidade Socioeconômica</a></li>
+                              <li><a href="assets/docs/INDICADOR_SOCIOECONOMICO.pdf#zoom=page-fit" target="_blank" rel="noopener">Mapa do Indicador de Favorabilidade Socioeconômica</a></li>
                           </ul>
                       </div>
                   </div>
@@ -166,10 +237,9 @@
               <!-- IQI -->
               <div class="col-md-4 mb-4">
                   <div class="card h-100 shadow">
-                      <div class="card-body">
-                          <h3 class="card-title">Indicador de Qualidade da Infraestrutura (IQI)</h3>
+                      <div class="card-body">                          <h3 class="card-title">Indicador de Qualidade da Infraestrutura (IQI)</h3>
                           <p class="card-text text-justify">
-                              O IQI mede a adequação da infraestrutura viária de trechos candidatos à estadualização, variando de 0 a 1. São avaliados oito elementos essenciais: faixa de domínio, pavimento, acostamento, sinalização vertical e horizontal, sistema de drenagem, pontes e viadutos. Cada elemento recebe uma nota de 0 a 10, conforme sua presença e qualidade. Os pesos foram definidos com base em questionários aplicados às 14 Diretorias Regionais do DER/SP para garantir que a experiência e a expertise técnica múltiplas fossem consideradas na avaliação. O cálculo final do IQI utiliza uma média ponderada das notas e pesos, garantindo que trechos com infraestrutura mais robusta sejam melhor classificados no indicador.
+                              O IQI serve para complementar o indicador espacial de favorabilidade de elementos rodoviários à estadualização. É concebido a partir da avaliação de elementos associados à infraestrutura, considerados primordiais para seleção ou hierarquização do elemento rodoviário candidato ao processo de estadualização. São avaliados oito elementos: faixa de domínio, pavimento, acostamento, sinalização vertical e horizontal, sistema de drenagem, pontes e viadutos. Cada elemento é avaliado numa escala de 0 a 10, onde 0 representa ausência e 10 representa qualidade ótima. Os elementos pontes e viadutos possuem maior peso (5) devido aos custos elevados de implementação, enquanto faixa de domínio e pavimento têm peso 2, e os demais elementos variam entre 1,1 e 1,5.
                           </p>
                           <div class="text-center">
                               <a href="https://vinicapanema.github.io/estadualizacao-der/calculadora-iqi.html" class="btn btn-primary">Calculadora do IQI</a>
@@ -184,79 +254,148 @@
   
   
   
-  
-
-    <!-- Seção: Resultados -->
+      <!-- Seção: Resultados -->
     <section id="resultados" class="py-5 bg-light">
       <div class="container">
         <h2 class="text-center mb-4">Resultados</h2>
-        <p class="text-justify">
-          Explore os mapas interativos abaixo para visualizar os trechos avaliados e suas características.
+        <div class="row">
+          <div class="col-md-6">
+            <h4>Indicador Espacial de Favorabilidade</h4>
+            <p class="text-justify">
+              Os resultados da aplicação da AHP revelaram que as variáveis com maior peso são: <strong>distância das sedes municipais, intersecção com mancha urbana, densidade de escolas e produção agrícola municipal</strong>. A razão de consistência de 0,074 indica que as variáveis foram logicamente hierarquizadas.
+            </p>
+            <p class="text-justify">
+              O mapa de favorabilidade indica que as regiões mais favoráveis à estadualização estão concentradas no <strong>centro-norte do estado</strong>, enquanto as menos favoráveis localizam-se na <strong>parte sudeste</strong>.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <h4>Análise de Sensibilidade</h4>
+            <p class="text-justify">
+              Foram realizadas duas análises de sensibilidade para validar a robustez dos resultados. A primeira (Macul, 2019) identificou que as áreas menos sensíveis localizam-se no <strong>centro-oeste e norte</strong> do estado, significando que alterações nos pesos da AHP não afetariam significativamente os resultados nessas regiões.
+            </p>
+            <p class="text-justify">
+              A segunda análise (Morris, 1991) mostrou que as variáveis <strong>distância de sedes municipais e intersecção com mancha urbana</strong> são as mais sensíveis a alterações de pesos, sendo responsáveis pelas maiores variações nos resultados.
+            </p>
+          </div>
+        </div>        <div class="row mt-4">
+          <div class="col-md-12">
+            <h4 class="text-center">Aplicabilidade à Malha Estadual</h4>
+            <p class="text-justify text-center">
+              O método foi aplicado à toda malha viária do estado, gerando uma classificação geral dos elementos rodoviários quanto à favorabilidade. Os elementos rodoviários mais favoráveis encontram-se espalhados ao longo de todo o estado, com destaque para áreas no <strong>médio norte, oeste, centro e sudeste</strong>.
+            </p>
+          </div>
+        </div>
+        <p class="text-center mt-4">
+          <strong>Explore os mapas interativos abaixo para visualizar os elementos rodoviários avaliados e suas características.</strong>
         </p>
         <div class="ratio ratio-16x9 shadow">
           <iframe
             src="https://sirgeomaps.ad.der.sp.gov.br/portal/apps/webappviewer/index.html?id=1edf820629c64578b94be2132ff742b2"
             allowfullscreen
-            style="border: none;"
+            title="Mapa Interativo de Estadualização DER/SP"
+            class="iframe-grafico"
           ></iframe>
         </div>
-      </div>
-    </section>
-
-    <!-- Seção: Estadualização em Números (Penúltima seção) -->
-    <section id="numeros" class="py-5">
-      <div class="container">
-        <h2 class="text-center mb-4">Estadualização em Números</h2>
-        <div class="text-center">
-          <canvas id="graficoProcessos"></canvas>
-        </div>
-      </div>
-    </section>
+      </div>    </section>
 
     <!-- Seção: Considerações Finais -->
     <section id="consideracoes" class="py-5">
       <div class="container">
         <h2 class="text-center mb-4">Considerações Finais</h2>
-        <p class="text-justify">
-          A ferramenta desenvolvida traz benefícios significativos para a tomada de decisão, com possibilidades de aprimoramento futuro. A integração de dados geográficos, socioeconômicos e técnicos permite uma análise robusta e embasada, contribuindo para o planejamento estratégico do DER/SP.
-        </p>
+        <div class="row">
+          <div class="col-md-6">
+            <h4>Vantagens da Metodologia</h4>
+            <p class="text-justify">
+              O método apresenta uma <strong>abordagem sistemática e eficiente</strong> de suporte à tomada de decisão baseada em análise multicritério. É um método versátil, permitindo a inclusão e exclusão de critérios bem como a hierarquização de acordo com as demandas necessárias.
+            </p>
+            <p class="text-justify">
+              A análise de sensibilidade empregada permitiu avaliar os efeitos da subjetividade associada à hierarquização, possibilitando quantificá-los para garantir maior <strong>robustez dos resultados</strong>.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <h4>Aplicabilidade e Limitações</h4>            <p class="text-justify">
+              É importante destacar que a abordagem realizada representa as <strong>etapas iniciais do processo de estadualização</strong>, contribuindo principalmente para a redução da quantidade de elementos rodoviários a serem avaliados para as etapas finais.
+            </p>
+            <p class="text-justify">
+              Demais questões processuais, administrativas e locais devem ser tratadas de maneira individualizada. O presente método <strong>não substitui a expertise dos tomadores de decisão</strong> e funciona como suporte adicional do processo.
+            </p>
+          </div>
+        </div>        <div class="alert alert-info mt-4" role="alert">
+          <h5 class="alert-heading">Importante!</h5>
+          <p class="mb-0">
+            Os indicadores podem ser utilizados <strong>em conjunto</strong> (índice geral de favorabilidade) ou <strong>separadamente</strong> para determinar a favorabilidade de cada elemento rodoviário à estadualização, conforme as especificidades da avaliação.
+          </p>
+        </div>      </div>
+    </section>    <!-- Seção: FAD - Ferramenta de Análise Dinamizada -->
+    <section id="fad" class="py-5 fad-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-4">
+            <div class="text-center mb-4">
+              <img src="assets/images/logo_fad_completo_fundo_transparente.png" alt="Logo FAD" class="img-fluid fad-logo">
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="fad-content">
+              <h3 class="mb-3">Ferramenta de Análise Dinamizada - FAD</h3>
+              <p class="text-justify mb-4">
+                A <strong>FAD</strong> é uma plataforma desenvolvida para apoiar a tomada de decisões estratégicas em infraestrutura e planejamento territorial. Integrando tecnologias de geoprocessamento e análise multicritério, oferece soluções para os desafios do planejamento público.
+              </p>
+              <div class="row mb-4">
+                <div class="col-md-6">
+                  <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Geoprocessamento avançado</li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Análise multicritério</li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Visualização de dados</li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i>Suporte à decisão</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="text-left">
+                <a href="http://fadgeo.lat" target="_blank" rel="noopener" class="btn btn-outline-primary">
+                  Saiba mais sobre a FAD
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Rodapé padrão Governo SP -->
-    <footer class="govsp-footer" style="background: #111; color: #fff; padding: 40px 0;">
-      <div class="govsp-footer-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-        <div class="govsp-footer-logo" style="margin-bottom: 16px;">
+    <!-- Rodapé padrão Governo SP --><footer class="govsp-footer">
+      <div class="govsp-footer-content">
+        <div class="govsp-footer-logo">
           <a href="http://www.saopaulo.sp.gov.br/">
             <img src="https://saopaulo.sp.gov.br/barra-govsp/img/logo-governo-do-estado-sp.png" alt="Governo do Estado de São Paulo" height="38">
           </a>
-        </div>
-        <div class="govsp-footer-links" style="margin-bottom: 12px; text-align: center;">
-          <a href="http://www.saopaulo.sp.gov.br/" target="_blank" style="color: #fff;">Portal do Governo de SP</a> |
-          <a href="http://www.saopaulo.sp.gov.br/fale-conosco/" target="_blank" style="color: #fff;">Fale Conosco</a> |
-          <a href="http://www.saopaulo.sp.gov.br/acessibilidade/" target="_blank" style="color: #fff;">Acessibilidade</a>
-        </div>
-        <div class="govsp-footer-social" style="margin-bottom: 12px;">
-          <a href="https://www.flickr.com/governosp/" target="_blank"><img src="https://saopaulo.sp.gov.br/barra-govsp/img/i-flickr.png" alt="Flickr" style="margin: 0 8px;"></a>
-          <a href="https://www.linkedin.com/company/governosp/" target="_blank"><img src="https://saopaulo.sp.gov.br/barra-govsp/img/i-linkedin.png" alt="Linkedin" style="margin: 0 8px;"></a>
-          <a href="https://www.tiktok.com/@governosp" target="_blank"><img src="https://saopaulo.sp.gov.br/barra-govsp/img/i-tiktok.png" alt="TikTok" style="margin: 0 8px;"></a>
-          <a href="https://www.youtube.com/governosp/" target="_blank"><img src="https://saopaulo.sp.gov.br/barra-govsp/img/i-youtube.png" alt="Youtube" style="margin: 0 8px;"></a>
-          <a href="https://www.twitter.com/governosp/" target="_blank"><img src="https://saopaulo.sp.gov.br/barra-govsp/img/i-twitter.png" alt="Twitter" style="margin: 0 8px;"></a>
-          <a href="https://www.instagram.com/governosp/" target="_blank"><img src="https://saopaulo.sp.gov.br/barra-govsp/img/i-insta.png" alt="Instagram" style="margin: 0 8px;"></a>
-          <a href="https://www.facebook.com/governosp/" target="_blank"><img src="https://saopaulo.sp.gov.br/barra-govsp/img/i-facebook.png" alt="Facebook" style="margin: 0 8px;"></a>
+        </div>        <div class="govsp-footer-links">
+          <a href="http://www.saopaulo.sp.gov.br/" target="_blank" rel="noopener">Portal do Governo de SP</a> |
+          <a href="http://www.saopaulo.sp.gov.br/fale-conosco/" target="_blank" rel="noopener">Fale Conosco</a> |
+          <a href="http://www.saopaulo.sp.gov.br/acessibilidade/" target="_blank" rel="noopener">Acessibilidade</a>
+        </div>        <div class="govsp-footer-social">
+          <a href="https://www.flickr.com/governosp/" target="_blank" rel="noopener"><img src="https://saopaulo.sp.gov.br/barra-govsp/img/i-flickr.png" alt="Flickr"></a>
+          <a href="https://www.linkedin.com/company/governosp/" target="_blank" rel="noopener"><img src="https://saopaulo.sp.gov.br/barra-govsp/img/i-linkedin.png" alt="Linkedin"></a>
+          <a href="https://www.tiktok.com/@governosp" target="_blank" rel="noopener"><img src="https://saopaulo.sp.gov.br/barra-govsp/img/i-tiktok.png" alt="TikTok"></a>
+          <a href="https://www.youtube.com/governosp/" target="_blank" rel="noopener"><img src="https://saopaulo.sp.gov.br/barra-govsp/img/i-youtube.png" alt="Youtube"></a>
+          <a href="https://www.twitter.com/governosp/" target="_blank" rel="noopener"><img src="https://saopaulo.sp.gov.br/barra-govsp/img/i-twitter.png" alt="Twitter"></a>
+          <a href="https://www.instagram.com/governosp/" target="_blank" rel="noopener"><img src="https://saopaulo.sp.gov.br/barra-govsp/img/i-insta.png" alt="Instagram"></a>
+          <a href="https://www.facebook.com/governosp/" target="_blank" rel="noopener"><img src="https://saopaulo.sp.gov.br/barra-govsp/img/i-facebook.png" alt="Facebook"></a>
         </div>
         <div class="govsp-footer-copy">
-          <p style="margin: 0; color: #fff;">&copy; Governo do Estado de São Paulo - Todos os direitos reservados.</p>
+          <p class="govsp-footer-copyright">&copy; Governo do Estado de São Paulo - Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <!-- Biblioteca SheetJS para leitura de arquivos Excel -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="scripts.js"></script>
+    <script src="assets/js/scripts.js"></script>
   </body>
 </html>
