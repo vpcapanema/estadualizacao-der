@@ -1,1 +1,34 @@
+# Ambientes virtuais Python
+.venv/
+venv/
+env/
+
+# Arquivos de cache Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Arquivos temporários
+*.tmp
+*.temp
+
+# IDEs
+.vscode/
+.idea/
+
+# Node modules (se houver)
+node_modules/
+
+# Arquivos de backup
+*.backup
+*.bak
+
+# Dados específicos do projeto
 dados.json
