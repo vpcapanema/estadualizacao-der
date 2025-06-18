@@ -1,8 +1,10 @@
 /* Estilos Globais */
 body {
-  font-family: 'Roboto', sans-serif;
+  background-color: #f7f7f7;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
   line-height: 1.6;
-  color: #333;
+  padding-top: 0; /* Garante que o conteúdo não fique atrás da barra fixa */
 }
 
 h1,
@@ -11,7 +13,9 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: 700;
+  color: #003366;
 }
 
 p {
@@ -21,7 +25,8 @@ p {
 
 /* Cabeçalho */
 header {
-  background-color: #005CA9; /* Azul principal do governo de SP */
+  background-color: #012242 !important;
+  color: #fff;
   padding: 100px 0;
 }
 
@@ -37,35 +42,84 @@ header p {
 
 /* Menu de Navegação */
 .navbar {
-  background-color: #333; /* Cinza escuro */
+  background-color: #003366 !important;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-brand {
   font-weight: 500;
+  color: #fff !important;
 }
 
 .nav-link {
   font-weight: 500;
+  color: #fff !important;
 }
 
 /* Seções */
 section {
+  margin-bottom: 2.5rem;
   padding: 80px 0;
+  background-color: #f5f5f5 !important;
+}
+
+/* Ajusta altura mínima da barra govsp-topo para garantir visual igual ao original */
+.govsp-topo {
+  width: 100vw;
+  min-height: unset;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  position: static;
+  top: unset;
+  left: unset;
+  right: unset;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+/* Remove qualquer espaçamento extra acima/abaixo da barra govsp-topo */
+.govsp-topo > * {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Deixa os containers das seções mais estreitos e com cantos arredondados */
+section > .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  padding: 2.5rem 2rem;
+}
+
+@media (max-width: 1200px) {
+  section > .container {
+    max-width: 98vw;
+    padding: 1.2rem 0.5rem;
+  }
 }
 
 /* Cards */
 .card {
-  border: none;
-  transition: transform 0.3s ease;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07), 0 1.5px 4px rgba(0,0,0,0.04);
+  border: 1.5px solid #e0e0e0;
+  margin-bottom: 2rem;
+  padding: 2rem 1.5rem;
+  transition: box-shadow 0.3s, border-color 0.3s;
+  /* Adiciona leve espaçamento interno e visual de retângulo */
+}
+
+.card:not(:last-child) {
+  margin-bottom: 2.5rem;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-}
-
-.card-body {
-  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12), 0 3px 8px rgba(0,0,0,0.08);
+  border-color: #b3b3b3;
 }
 
 /* Gráfico */
@@ -75,8 +129,9 @@ canvas {
 }
 
 /* Rodapé */
-footer {
-  background-color: #222; /* Cinza mais escuro */
+footer, .govsp-footer {
+  background-color: #111112 !important;
+  color: #fff !important;
   padding: 40px 0;
 }
 
@@ -90,7 +145,8 @@ footer p {
 
 /* Botões */
 .btn-primary {
-  background-color: #005CA9;
+  background-color: #ffcc00;
+  color: #003366;
   border: none;
   padding: 0.75rem 2rem;
   font-size: 1rem;
@@ -98,7 +154,17 @@ footer p {
 }
 
 .btn-primary:hover {
-  background-color: #004080;
+  background-color: #e6b800;
+  color: #003366;
+}
+
+/* Links */
+a {
+  color: #003366;
+}
+
+a:hover {
+  color: #ffcc00;
 }
 
 /* Responsividade */
@@ -113,5 +179,286 @@ footer p {
 
   .navbar-nav {
     margin-top: 1rem;
+  }
+}
+
+/* CSS do menu institucional DER-SP */
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
+
+.titulogeral {
+  color: #353739 !important;
+  text-decoration: none;
+}
+.titulogeral a:hover {
+  color: #fafafa;
+  text-decoration: none;
+}
+.titulo1 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  line-height: 1.1;
+  font-size: 33px;
+}
+.titulo2 {
+  text-align: left;
+  display: block;
+  width: 160px;
+  font-size: 14px;
+  font-weight: 400;
+}
+.nav__container {
+  width: 100%;
+  background-color: #fafafa;
+}
+.nav__mobile .nav__btn {
+  display: block;
+}
+.nav__mobile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav__logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #555;
+}
+.nav__menu {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 999;
+  position: relative;
+}
+.showing {
+  max-height: 37rem;
+  transition: all .5s;
+}
+.nav__menu li {
+  list-style: none;
+  position: relative;
+  white-space: nowrap;
+  padding: 1rem 0 0;
+}
+.nav__menu li a {
+  display: block;
+  font-size: 1.4rem;
+  color: #222;
+  text-decoration: none;
+}
+.nav-toggle {
+  display: block;
+  background-color: transparent;
+  width: 40px;
+  cursor: pointer;
+  padding: 4px;
+  opacity: 1;
+}
+.nav-toggle span {
+  position: relative;
+  display: block;
+  height: 4px;
+  border-radius: 35px;
+  width: 100%;
+  margin-top: 0;
+  background-color: #000;
+  transition: all .25s;
+}
+.nav-toggle span.mrg {
+  margin-top: 5px;
+}
+.nav-toggle.open span:first-child {
+  transform: rotate(45deg) translate(6.2px,6.2px);
+}
+.nav-toggle.open span:nth-child(2) {
+  width: 0;
+  opacity: 0;
+}
+.nav-toggle.open span:last-child {
+  transform: rotate(-45deg) translate(6.2px,-6.2px);
+}
+.nav__menu .dropdown ul {
+  display: flex;
+  flex-direction: column;
+  position: static;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all .4s;
+}
+.nav__menu .dropdown ul.show {
+  max-height: 100rem;
+  transition: all .4s;
+}
+.nav__menu .dropdown li a {
+  display: block;    
+  text-transform: capitalize;
+  color: #222;
+  text-decoration: none;
+}
+.nav__menu li a:hover {
+  color: #0062a3;
+}
+.nav__menu .dropdown>a:after {
+  content: "\f107";
+  font: normal normal normal 14px/1 FontAwesome;
+  font-weight: 900;
+  font-size: .875rem;
+  padding-left: 5px;
+  color: #7e7e7e;
+}
+.nav__menu .active.dropdown>a:after {
+  content: "\f106";
+}
+.nav__menu .dropdown .dropdown>a:after {
+  content: "\f107";
+  font: normal normal normal 14px/1 FontAwesome;
+  font-weight: 900;
+  font-size: .875rem;
+  padding-left: 5px;
+  color: #7e7e7e;
+}
+.nav__menu .dropdown .active.dropdown>a:after {
+  content: "\f106";
+}
+.menu-toggle {
+  max-height: 0;
+  overflow: hidden;
+}
+.menu-toggle,.menu-toggle.active {
+  transition: all .4s ease;
+}
+.menu-toggle.active {
+  max-height: 100vh;
+}
+.resize-animation-stopper * {
+  transition: none!important;
+  animation: none!important;
+}
+@media screen and (min-width: 800px) {
+  .menu-toggle {
+    display:flex!important;
+    max-height: 100vh;
+    overflow: visible;
+  }
+  .nav__container {
+    width: 100%;        
+    margin: auto;
+    flex-direction: row;
+    padding: 10px 40px 10px 40px;
+  }
+  .nav__container,.nav__mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav__mobile .nav__btn {
+    display: none;
+  }
+  .nav__logo img {
+    width: 100%;
+    max-width: 58px;
+  }
+  .nav__menu {
+    display: flex;
+    flex-direction: row;
+    max-height: 100%;
+    overflow: visible;
+  }
+  .nav__menu li {
+    list-style: none;
+    position: relative;
+    white-space: nowrap;
+    padding: 1rem;
+  }
+  .nav__menu li a {
+    font-size: 1.4rem;
+    color: #222;
+    text-decoration: none;
+  }
+  .nav__menu li a:hover {
+    color: #0062a3;
+  }
+  .nav__menu .dropdown {
+    position: relative;
+  }
+  .nav__menu .dropdown ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: -30px;
+    opacity: 0;
+    visibility: hidden;
+    padding: 0 1rem;
+    transition: all .4s ease;
+  }
+  .nav__menu .dropdown:hover>ul {
+    top: 100%;
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+    overflow: visible;
+    padding: 0 1rem;
+  }
+  .nav__menu .dropdown ul li {
+    padding: 1.5rem;
+    background-color: #fafafa;
+    position: relative;
+  }
+  .nav__menu .dropdown ul li:hover {
+    background-color: #3493e0;
+  }
+  .nav__menu .dropdown ul li a {
+    display: block;
+    color: #000;
+    text-transform: capitalize;
+  }
+  .nav__menu .dropdown ul li a:hover {
+    display: block;
+    color: #c7e0f5;
+  }
+  .nav__menu .dropdown:hover>a:after,.nav__menu .dropdown>a:after {
+    font: normal normal normal 14px/1 FontAwesome;
+    font-weight: 900;
+    font-size: .875rem;
+    padding-left: 5px;
+    color: #7c7c7c;
+  }
+  .nav__menu .dropdown:hover>a:after {
+    content: "\f106";
+  }
+  .nav__menu .dropdown .dropdown>a:after {
+    content: "\f105";
+  }
+  .nav__menu .dropdown .dropdown:hover>a:after {
+    content: "\f104";        
+  }
+  .nav__menu .dropdown>a:after {
+    content: "\f107";
+  }
+  .nav__menu .dropdown .dropdown:hover>a:after,.nav__menu .dropdown .dropdown>a:after {
+    font: normal normal normal 14px/1 FontAwesome;
+    font-weight: 900;
+    font-size: .875rem;
+    padding-left: 10px;
+    color: #000;
+  }
+  .nav__menu .dropdown .dropdown:hover>ul {
+    position: absolute;
+    top: 0;
+    left: calc(102% - 17px);
+    right: auto;
+    opacity: 1;
+    visibility: visible;
+  }
+  .nav__menu .dropdown .dropdown ul {
+    position: absolute;
+    top: 0;
+    left: calc(102% - 17px);
+    right: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .4s ease-in-out;
   }
 }
